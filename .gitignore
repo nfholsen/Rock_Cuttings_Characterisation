@@ -3,4 +3,4 @@ __pycache__/
 *.csv
 *.png
 *.pkl
-*.word
+*.docx
