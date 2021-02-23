@@ -1,8 +1,4 @@
-from cuttings import *
-
-import matplotlib.pyplot as plt
 import pandas as pd
-import matplotlib.pyplot as plt
 import numpy as np
 
 import pickle 
@@ -11,7 +7,6 @@ import time
 import copy
 import PIL.Image as Image
 import random
-import cv2
 
 import torch
 import torch.optim as optim
@@ -391,7 +386,7 @@ def main(INPUT_PATH = 'inputs.ini'):
     classes = np.array(['ML', 'MS','BL','GN','OL'])
     
     # Loop start here
-    for i in range(model_number,2) : 
+    for i in range(model_number,3) : 
         
         # # Create model 
         model = initialize_model(model_type,
@@ -418,7 +413,7 @@ def main(INPUT_PATH = 'inputs.ini'):
         # Create loss, optimizer and scheduler
         criterion = nn.CrossEntropyLoss()
         optimizer = optim.Adam(model.parameters())
-        scheduler = StepLR(optimizer, step_size=1, gamma=0.1)
+        scheduler = StepLR(optimizer, step_size=20, gamma=0.1)
     
         
         # # Train model
@@ -427,16 +422,14 @@ def main(INPUT_PATH = 'inputs.ini'):
         preds_vec, true_vec = prediciton(model,dataloaders,device)
         
         # # Save results
-        results = open(inputs.get('model_root')+inputs.get('model_results')+'logs_'+str(i), 'wb')
-        pickle.dump([loss_train,
-                    acc_train,
-                    loss_val,
-                    acc_val,
-                    preds_vec,
-                    true_vec],
-                    results)
-        
-        results.close()
+        csv_path = inputs.get('model_root')+inputs.get('model_results')
+
+        labels = pd.DataFrame(data=np.array([preds_vec,true_vec]).T,columns=['preds_vec','true_vec'])
+
+        epoch_data = pd.DataFrame(data=np.array([loss_train,acc_train,loss_val,acc_val]).T,columns=['loss_train','acc_train','loss_val','acc_val'])
+
+        labels.to_csv(csv_path+'labels_logs_'+str(i)+'.csv')
+        epoch_data.to_csv(csv_path+'epoch_data_logs_'+str(i)+'.csv')
         
         # # Save model for the training i 
         torch.save(model, inputs.get('model_root')+inputs.get('model_results')+'model_'+str(i))

@@ -74,6 +74,10 @@ def crop_rectangle(im_rect,box,rect):
         angle+=90
         rotated = True
         
+    if angle > 45:
+        angle-=90
+        rotated = True
+
     size = (x2-x1,y2-y1)
     center = (int((x1+x2)/2), int((y1+y2)/2))
     
@@ -106,7 +110,7 @@ def pad_image(im_rect_not_pad,desired_size=128):
     value=color)
     return im_rect_pad
 
-def plot_samples(image,label_image,big_samples):
+def plot_samples(image,label_image,im):
     minr, minc, maxr, maxc = regionprops(label_image)[im].bbox
         
     fig,ax = plt.subplots(1,2)
@@ -117,7 +121,7 @@ def plot_samples(image,label_image,big_samples):
                 cmap=plt.cm.gray,aspect="auto")
     plt.show()
 
-def plot_samples_resized(image,label_image,big_samples,WIDTH=128,HEIGHT=128): 
+def plot_samples_resized(image,label_image,im,WIDTH=128,HEIGHT=128): 
     minr, minc, maxr, maxc = regionprops(label_image)[im].bbox
         
     fig,ax = plt.subplots(1,2)
@@ -131,7 +135,7 @@ def plot_samples_resized(image,label_image,big_samples,WIDTH=128,HEIGHT=128):
                 cmap='gray')
     plt.show()
 
-def plot_samples_padded(image,label_image,big_samples):
+def plot_samples_padded(image,label_image,im):
     minr, minc, maxr, maxc = regionprops(label_image)[im].bbox
         
     fig,ax = plt.subplots(1,2)
@@ -142,7 +146,7 @@ def plot_samples_padded(image,label_image,big_samples):
                 cmap=plt.cm.gray,aspect="auto")
     plt.show()
     
-def plot_rectangular_samples(image,dilated,big_samples):
+def plot_rectangular_samples(image,dilated,im):
     im_rect = img_as_ubyte(dilated == regionprops(dilated)[im].label)#.astype(np.uint8)
     contours,_ = cv2.findContours(im_rect, 1, 2)
     rect = cv2.minAreaRect(contours[0])
@@ -159,7 +163,7 @@ def plot_rectangular_samples(image,dilated,big_samples):
                 cmap='gray')
     plt.show()
     
-def plot_rectangular_samples_resized(image,dilated,big_samples,WIDTH = 128,HEIGHT = 128):
+def plot_rectangular_samples_resized(image,dilated,im,WIDTH = 128,HEIGHT = 128):
     im_rect = img_as_ubyte(dilated == regionprops(dilated)[im].label)#.astype(np.uint8)
     contours,_ = cv2.findContours(im_rect, 1, 2)
     rect = cv2.minAreaRect(contours[0])
@@ -180,7 +184,7 @@ def plot_rectangular_samples_resized(image,dilated,big_samples,WIDTH = 128,HEIGH
                 cmap='gray')
     plt.show()
     
-def plot_rectangular_samples_padded(image,dilated,big_samples):
+def plot_rectangular_samples_padded(image,dilated,im):
     im_rect = img_as_ubyte(dilated == regionprops(dilated)[im].label)#.astype(np.uint8)
     contours,_ = cv2.findContours(im_rect, 1, 2)
     rect = cv2.minAreaRect(contours[0])
