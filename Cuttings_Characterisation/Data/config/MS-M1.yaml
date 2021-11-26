@@ -1,0 +1,16 @@
+---
+
+rootLoad: C:/Users/nilso/Documents/EPFL/MA4/PDS Turberg/
+
+folderLoad: Cuttings_data/MS-M1/
+
+rootSave: C:/Users/nilso/Documents/EPFL/MA4/PDS Turberg/Rock_Cuttings_Characterisation/Cuttings_Characterisation/
+
+folderSave: Data/Test_New/MS-M1/
+
+imgTypes:
+  - '/*.tiff'
+  - '/*.tif'
+  - '/*.png'
+  - '/*.jpg'
+  - '/*.jpeg'
