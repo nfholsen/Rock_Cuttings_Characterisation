@@ -1,0 +1,16 @@
+---
+
+rootData: C:/Users/nilso/Documents/EPFL/MA4/PDS Turberg/Rock_Cuttings_Characterisation/Cuttings_Characterisation/Data/Test_New/
+
+Train:
+  ML:
+    Folder:
+      - 'ML-V1/'
+      - 'ML-V2/'
+    Label: 3
+  MS:
+    Folder:
+      - 'MS-B1/'
+      - 'MS-M1/'
+      - 'MS-M2/'
+    Label: 4
