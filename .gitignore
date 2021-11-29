@@ -5,6 +5,7 @@ __pycache__/
 *.docx
 *.tiff
 *.tif
+*.zip
 
 *.pt
 
