@@ -13,7 +13,7 @@ from Lamp.preprocessing.preprocessing import *
 
 def save_to_png(image,path_save,**kwargs):
 
-    image_name = image_raw.load_path.split('\\')[1].split('.')[0]
+    image_name = image.load_path.split('\\')[1].split('.')[0]
     
     if kwargs:
         if 'type' in kwargs:
@@ -23,7 +23,7 @@ def save_to_png(image,path_save,**kwargs):
 
                     imToSave = img_as_uint(imToSave)
 
-                    fname = path_save + "/" + image_name + "_" + kwargs['type'] + "_" + kwargs['name'] + "_" + str(i_+1) + ".png"
+                    fname = f"{path_save}/{image_name}_{kwargs['type']}_{kwargs['name']}_{str(i_+1)}.png"
                     imsave(fname,imToSave)
 
             else:
@@ -32,7 +32,7 @@ def save_to_png(image,path_save,**kwargs):
 
                     imToSave = img_as_uint(imToSave)
 
-                    fname = path_save + "/" + image_name + "_" + kwargs['type'] + "_" + "raw" + "_" + str(i_+1) + ".png"
+                    fname = f"{path_save}/{image_name}_{kwargs['type']}_raw_{str(i_+1)}.png"
                     imsave(fname,imToSave)
 
 """
@@ -42,89 +42,93 @@ This script will extract all the cuttings from a given list of scans and save th
 The input file with the .yaml format will contain all the parameters to avoid redundancy.
 
 """
-myopts, args = getopt.getopt(sys.argv[1:],"i:o:")
+def main():
+    myopts, args = getopt.getopt(sys.argv[1:],"i:o:")
 
-ifile=''
-ofile='None'
+    ifile=''
+    ofile='None'
 
-for o, a in myopts:
-    if o == '-i':
-        ifile=a
-    elif o == '-o':
-        ofile=a
+    for o, a in myopts:
+        if o == '-i':
+            ifile=a
+        elif o == '-o':
+            ofile=a
+        else:
+            print("Usage: %s -i input -o output" % sys.argv[0])
+
+    if os.path.isfile(ifile) and os.path.splitext(ifile)[-1] in [".yaml",".yml"]:
+        inputs = AttrDict.from_yaml_path(ifile) # change to argv
     else:
-        print("Usage: %s -i input -o output" % sys.argv[0])
+        raise AssertionError("Wrong input type")
 
-if os.path.isfile(ifile) and os.path.splitext(ifile)[-1] in [".yaml",".yml"]:
-    inputs = AttrDict.from_yaml_path(ifile) # change to argv
-else:
-    raise AssertionError("Wrong input type")
+    ### Read Data ###
+    path_load = os.path.dirname(inputs.rootLoad + inputs.folderLoad)
 
-### Read Data ###
-path_load = os.path.dirname(inputs.rootLoad + inputs.folderLoad)
+    ### Save Outputs ###
+    path_save = os.path.dirname(inputs.rootSave + inputs.folderSave)
 
-### Save Outputs ###
-path_save = os.path.dirname(inputs.rootSave + inputs.folderSave)
+    files_types = inputs.imgTypes
 
-files_types = inputs.imgTypes
+    lists_of_files = [glob.glob(path_load + type_) for type_ in files_types]
+    list_of_files = [item for elem in lists_of_files for item in elem]
 
-lists_of_files = [glob.glob(path_load + type_) for type_ in files_types]
-list_of_files = [item for elem in lists_of_files for item in elem]
+    ### Check if folder already exists ###
+    if not os.path.isdir(path_save):
+            os.mkdir(path_save)
 
-### Check if folder already exists ###
-if not os.path.isdir(path_save):
-        os.mkdir(path_save)
+    for file in list_of_files[200:-200:10]: # TODO : Change with an abstract class from transform
 
-for file in list_of_files[200:-200:10]: # TODO : Change with an abstract class from transform
+        image_raw = Image_Raw(file,'unchanged')
 
-    image_raw = Image_Raw(file,'unchanged')
+        # First
+        Custom().apply(image = image_raw, thres = Otsu().return_threshold(image_raw))
 
-    # First
-    Custom().apply(image = image_raw, thres = Otsu().return_threshold(image_raw))
+        # Second 
+        selem = disk(2)
+        Erosion(selem=selem).apply(image_raw)
 
-    # Second 
-    selem = disk(2)
-    Erosion(selem=selem).apply(image_raw)
+        # Third
+        Mask().apply(image_raw)
+        Labelize().apply(image_raw,threshold=5000)
 
-    # Third
-    Mask().apply(image_raw)
-    Labelize().apply(image_raw,threshold=5000)
+        # Fourth
+        selem = disk(5)
+        Closing(selem=selem).apply_regions(image_raw)
 
-    # Fourth
-    selem = disk(5)
-    Closing(selem=selem).apply_regions(image_raw)
+        # Fifth
+        selem = disk(2)
+        Erosion(selem=selem).apply(image_raw, 3)
 
-    # Fifth
-    selem = disk(2)
-    Erosion(selem=selem).apply(image_raw, 3)
+        # Sixth
+        Mask().apply(image_raw)
+        Labelize().apply(image_raw,threshold=5000)
 
-    # Sixth
-    Mask().apply(image_raw)
-    Labelize().apply(image_raw,threshold=5000)
+        # Seventh
+        selem = disk(2)
+        Dilation(selem=selem).apply(image_raw,4)
 
-    # Seventh
-    selem = disk(2)
-    Dilation(selem=selem).apply(image_raw,4)
+        # Eigth
+        Rescale_Intenstiy().apply_regions(image_raw, in_range=(1,99), out_range = (0,1), background=False)
 
-    # Eigth
-    Rescale_Intenstiy().apply_regions(image_raw, in_range=(1,99), out_range = (0,1), background=False)
+        define_regions(image_raw)
 
-    define_regions(image_raw)
+        #Resize(out_shape=256).apply_regions(image_raw,type='bbox',name='resized')
 
-    #Resize(out_shape=256).apply_regions(image_raw,type='bbox',name='resized')
+        #Resize(out_shape=256).apply_regions(image_raw,type='mar',name='resized')
 
-    #Resize(out_shape=256).apply_regions(image_raw,type='mar',name='resized')
+        #Padding(out_shape=256).apply_regions(image_raw,type='bbox',name='padded')
 
-    #Padding(out_shape=256).apply_regions(image_raw,type='bbox',name='padded')
+        #Padding(out_shape=256).apply_regions(image_raw,type='mar',name='padded')
 
-    #Padding(out_shape=256).apply_regions(image_raw,type='mar',name='padded')
+        # Save BBOX
+        save_to_png(image_raw, path_save=path_save, type='bbox')
+        #save_to_png(image_raw, path_save=path_save, type='bbox',name='padded')
+        #save_to_png(image_raw, path_save=path_save, type='bbox',name='resized')
 
-    # Save BBOX
-    save_to_png(image_raw, path_save=path_save, type='bbox')
-    #save_to_png(image_raw, path_save=path_save, type='bbox',name='padded')
-    #save_to_png(image_raw, path_save=path_save, type='bbox',name='resized')
+        # Save MAR
+        save_to_png(image_raw, path_save=path_save, type='mar')
+        #save_to_png(image_raw, path_save=path_save, type='mar',name='padded')
+        #save_to_png(image_raw, path_save=path_save, type='mar',name='resized')
 
-    # Save MAR
-    save_to_png(image_raw, path_save=path_save, type='mar')
-    #save_to_png(image_raw, path_save=path_save, type='mar',name='padded')
-    #save_to_png(image_raw, path_save=path_save, type='mar',name='resized')
+if __name__ == "__main__":
+    main()

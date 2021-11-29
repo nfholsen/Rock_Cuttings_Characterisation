@@ -1,0 +1,17 @@
+---
+ModelName : Test_Data_Augmentation
+
+PathSave : C:/Users/nilso/Documents/EPFL/MA4/PDS Turberg/Rock_Cuttings_Characterisation/Cuttings_Characterisation/Models/Train/
+
+LoadPath : C:/Users/nilso/Documents/EPFL/MA4/PDS Turberg/Rock_Cuttings_Characterisation/Cuttings_Characterisation/Dataset/train_bbox.csv
+
+CheckpointPath : C:/Users/nilso/Documents/EPFL/MA4/PDS Turberg/Rock_Cuttings_Characterisation/Cuttings_Characterisation/Data/Train/checkpoint.pt
+
+NEpochs : 10
+
+BatchSize : 4
+
+KFold : 5
+
+Seed : 0
+

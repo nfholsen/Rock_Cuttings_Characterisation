@@ -1,0 +1,35 @@
+---
+
+rootData: C:/Users/nilso/Documents/EPFL/MA4/PDS Turberg/Rock_Cuttings_Characterisation/Cuttings_Characterisation/Data/Train/
+
+Train:
+  BL:
+    Folder:
+      - 'BL3-1-DL/'
+      - 'BL3-4-DL/'
+      - 'BL3-5-DL/'
+    Label: 1
+  GN:
+    Folder:
+      - 'GN1-1-DL/'
+      - 'GN1-2-DL/'
+      - 'GN1-3-DL/'
+    Label: 2
+  ML:
+    Folder:
+      - 'ML-DB-Geo1/'
+      - 'ML-DB-Geo2/'
+      - 'ML-DB-Geo3/'
+    Label: 3
+  MS:
+    Folder:
+      - 'MS-DB-Geo01-1/'
+      - 'MS-DB-Geo01-2/'
+      - 'MS-DB-Geo01-3/'
+    Label: 4
+  OL:
+    Folder:
+      - 'OL-7-1-DL/'
+      - 'OL4-3-DL/'
+      - 'OL7-3-DL/'
+    Label: 5

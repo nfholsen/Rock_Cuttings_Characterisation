@@ -244,7 +244,7 @@ class BaseModelSingle(BaseModel):
                     checkpoint['lr_state'] = self.lr_scheduler.state_dict()
 
                 for k in self.extra_checkpoint_keys:
-                    ckeckpoint[k] = getattr(self, k)
+                    checkpoint[k] = getattr(self, k)
 
                 torch.save(checkpoint, checkpoint_path)
                 self.print_fn('\tCheckpoint saved.')
@@ -581,11 +581,11 @@ class BaseModelDualNet(BaseModel):
             loaded_state_dict1 = torch.load(import_path[0], map_location=map_location)
             loaded_state_dict2 = torch.load(import_path[1], map_location=map_location)
             if best:
-                self.best_net1.load_state_dict(loaded_state_dict)
-                self.best_net2.load_state_dict(loaded_state_dict)
+                self.best_net1.load_state_dict(loaded_state_dict1)
+                self.best_net2.load_state_dict(loaded_state_dict2)
             else:
-                self.net1.load_state_dict(loaded_state_dict)
-                self.net2.load_state_dict(loaded_state_dict)
+                self.net1.load_state_dict(loaded_state_dict1)
+                self.net2.load_state_dict(loaded_state_dict2)
 
         elif which == '1':
             loaded_state_dict = torch.load(import_path, map_location=map_location)

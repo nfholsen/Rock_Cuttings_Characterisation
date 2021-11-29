@@ -1,0 +1,16 @@
+---
+
+rootLoad: E:/FileHistory/nilso/LAPTOP-154DU0LI/Data/C/Users/nilso/Documents/EPFL/MA4/PDS Turberg/
+
+folderLoad: Cuttings_data/OL7-3-DL/
+
+rootSave: C:/Users/nilso/Documents/EPFL/MA4/PDS Turberg/Rock_Cuttings_Characterisation/Cuttings_Characterisation/
+
+folderSave: Data/Train/OL7-3-DL/
+
+imgTypes:
+  - '/*.tiff'
+  - '/*.tif'
+  - '/*.png'
+  - '/*.jpg'
+  - '/*.jpeg'
