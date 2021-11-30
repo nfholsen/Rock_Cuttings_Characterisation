@@ -1,11 +1,15 @@
 ---
 ModelName : Test_Data_Augmentation
 
-PathSave : C:/Users/nilso/Documents/EPFL/MA4/PDS Turberg/Rock_Cuttings_Characterisation/Cuttings_Characterisation/Models/Train/
+PathSave : Models/outputs/
 
-LoadPath : C:/Users/nilso/Documents/EPFL/MA4/PDS Turberg/Rock_Cuttings_Characterisation/Cuttings_Characterisation/Dataset/train_bbox.csv
+LoadPath : Dataset/train_bbox.csv
 
-CheckpointPath : C:/Users/nilso/Documents/EPFL/MA4/PDS Turberg/Rock_Cuttings_Characterisation/Cuttings_Characterisation/Data/Train/checkpoint.pt
+CheckpointName : checkpoint.pt
+
+CheckpointFreq : 5
+
+NSamples : 20
 
 NEpochs : 10
 
@@ -15,3 +19,25 @@ KFold : 5
 
 Seed : 0
 
+TransformTrain:
+  VerticalFlip: 
+    p : 0.5
+  HorizontalFlip : 
+    p : 0.5
+  Rotation : 
+    min : -90
+    max : 90
+  Resize :
+    width : 256
+    height : 256
+
+TransformTest:
+  Resize :
+    width : 256
+    height : 256
+ 
+Optimizer : 
+  lr : 0.001
+  weight_decay : 0.000001
+Scheduler :
+  gamma : 0.95

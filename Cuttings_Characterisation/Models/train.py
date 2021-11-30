@@ -1,7 +1,6 @@
 from os import lseek
 import torch
 import torch.nn as nn
-from torchvision.models import resnet34
 import torch.optim as optim
 from torch.optim.lr_scheduler import _LRScheduler
 
@@ -20,6 +19,14 @@ sys.path.append('C:/Users/nilso/Documents/EPFL/MA4/PDS Turberg/Rock_Cuttings_Cha
 from Lamp.AttrDict.AttrDict import *
 from Lamp.Model.Dataloader import *
 from Lamp.Model.BaseModel import *
+from Lamp.Model.Resnet import *
+
+# TODO's
+# - Add model and params for model
+
+# - Change forward pass to return loss and compute accuracy for train 
+# - Adjust validation to be the same as train and adjust loss to match the two
+# - Prepare config files for all models to train
 
 def load_config(cfg_path):
     """  """
@@ -44,6 +51,23 @@ def set_parameter_requires_grad(model):
         for param in child.parameters():
             param.requires_grad = True
 
+def resnet34(channels=3, num_classes=1000):
+    layers=[3, 4, 6, 3]
+    model = ResNet(BasicBlock,layers,channels=channels,num_classes=num_classes)
+    return model
+
+class Transforms():
+    def __init__(self, *args, **kwargs):
+
+        self.transforms_list = args[0]
+        self.transforms_list.extend([MinMaxNormalization(),tf.ToTensor()])
+
+    def get_transforms(self):
+        transforms = tf.Compose(
+                self.transforms_list
+                )
+        return transforms
+    
 
 class Classifier(BaseModelSingle):
     def __init__(self, net: nn.Module, opt: Optimizer = None, sched: _LRScheduler = None, 
@@ -85,6 +109,7 @@ class Classifier(BaseModelSingle):
 
 def main(): 
     
+    # Read args from terminal
     myopts, args = getopt.getopt(sys.argv[1:],"i:o:")
 
     ifile=''
@@ -98,49 +123,73 @@ def main():
         else:
             print("Usage: %s -i input -o output" % sys.argv[0])
 
+    # Load config_file
     inputs = load_config(ifile)
 
+    # Handle config_file inputs
     n_epochs = int(inputs.NEpochs)
     batch_size = int(inputs.BatchSize)
     k = int(inputs.KFold)
-    path_save = f"{inputs.PathSave}"
     seed = int(inputs.Seed)
+    n_samples = int(inputs.NSamples)
+
+    # Handle file paths
+    root_path = os.path.abspath(os.path.join(os.getcwd(), '..')) # Workspace path to Cuttings_Characterisation 
+    path_model = f"{root_path}/{inputs.PathSave}/{inputs.ModelName}"
+
+    if os.path.isdir(path_model) is False: # Create new folder for the model
+        os.mkdir(path_model)
+
+    path_load_data = f"{root_path}/{inputs.LoadPath}" # Path for the .csv file
+    path_checkpoint = f"{path_model}/{inputs.CheckpointName}"
     
+    # Seed
     set_seed(seed)
 
+    # Pytorch device
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     print(device)
     print(torch.cuda.get_device_name(device))
 
-    dataframe = pd.read_csv(inputs.LoadPath,index_col=0)
-    dataframe = dataframe.groupby('Label').sample(1000,replace=True,random_state=seed).reset_index(drop=True)
+    # Read dataset
+    dataframe = pd.read_csv(path_load_data,index_col=0)
+    dataframe = dataframe.groupby('Label').sample(n_samples,replace=True,random_state=seed).reset_index(drop=True) # Sample training data from the csv with replacement
 
     X = dataframe.iloc[:,:-1]
     y = dataframe.iloc[:,-1]
 
-    kf = StratifiedKFold(n_splits=k, random_state=seed)
+    # Stratified KFold
+    kf = StratifiedKFold(n_splits=k, random_state=seed, shuffle=True)
 
-    transforms = tf.Compose(
-        [     
-            tf.Grayscale(num_output_channels=3),  
-            #tf.ColorJitter(brightness=0.5),
-            tf.RandomHorizontalFlip(p=0.5),
-            tf.RandomVerticalFlip(p=0.5),
-            tf.RandomRotation([-90,90],resample=False, expand=False, center=None, fill=None),
-            tf.Resize((256,256)),
-            MinMaxNormalization(),
-            tf.ToTensor(),
-        ])
+    # Transforms (other than MinMaxNorm and ToTensor)
+    dict_transform = {
+        "VerticalFlip":tf.RandomVerticalFlip,
+        "HorizontalFlip":tf.RandomHorizontalFlip,
+        "Rotation":tf.RandomRotation,
+        "Resize":tf.Resize,
+        "Padding":tf.Pad
+    }
+
+    transforms_train = Transforms(
+        [dict_transform[key]([k for k in item.values()] if len(item.values()) > 1 else [k for k in item.values()][0]) for key, item in inputs.TransformTrain.items()] 
+        )
+
+    transforms_test = Transforms(
+        [dict_transform[key]([k for k in item.values()] if len(item.values()) > 1 else [k for k in item.values()][0]) for key, item in inputs.TransformTest.items()] 
+        )
 
     for i_, (train_index, test_index) in enumerate(kf.split(X,y)):
 
+        model_name = f"model_{i_}.pt"
+        save_model_path = f"{path_model}/{model_name}"
+
         trainDataset = Dataset(
             dataframe.loc[train_index,:].reset_index(drop=True),
-            transforms=transforms
+            transforms=transforms_train.get_transforms()
             )
         testDataset = Dataset(
             dataframe.loc[test_index,:].reset_index(drop=True),
-            transforms=transforms
+            transforms=transforms_test.get_transforms()
             )
 
         train_dataloader = torch.utils.data.DataLoader(
@@ -152,19 +201,17 @@ def main():
             batch_size=batch_size,
             shuffle=True)
 
-        net = resnet34(pretrained=True)
+        net = resnet34(channels=1,num_classes=5)
 
-        set_parameter_requires_grad(net)
-        
         optimizer = optim.Adam(
             net.parameters(), 
-            lr=0.001, 
-            weight_decay=1e-6
+            lr=inputs.Optimizer.lr, 
+            weight_decay=inputs.Optimizer.weight_decay
             )
 
         sched = optim.lr_scheduler.ExponentialLR(
             optimizer, 
-            gamma=0.95
+            gamma=inputs.Scheduler.gamma
             )
 
         classifier = Classifier(
@@ -178,14 +225,16 @@ def main():
             n_epochs=n_epochs,
             train_loader=train_dataloader,
             valid_loader=test_dataloader,
-            checkpoint_path = inputs.CheckpointPath
+            checkpoint_path = path_checkpoint,
+            checkpoint_freq= inputs.CheckpointFreq
             )
 
-        if not os.path.isdir(os.path.dirname(path_save)):
-            path = os.path.dirname(path_save)
-            path.mkdir(parents=True)
+        # Save model weights etc. 
+        classifier.save(save_model_path)
 
-        classifier.save(f"{path_save}_{i_}.pt")
+        # End of training remove checkpoint file
+        if os.path.isfile(path_checkpoint): # Remove checkpoint file at the end of the training
+            os.remove(path_checkpoint)
 
 if __name__ == "__main__":
     main()

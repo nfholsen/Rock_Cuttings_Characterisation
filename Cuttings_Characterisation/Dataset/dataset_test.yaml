@@ -7,10 +7,10 @@ Train:
     Folder:
       - 'ML-V1/'
       - 'ML-V2/'
-    Label: 3
+    Label: 2
   MS:
     Folder:
       - 'MS-B1/'
       - 'MS-M1/'
       - 'MS-M2/'
-    Label: 4
+    Label: 3
