@@ -3,21 +3,30 @@ ModelName : Test_Data_Augmentation
 
 PathSave : Models/outputs/
 
-LoadPath : Dataset/train_bbox.csv
+LoadPath : Dataset/train_mar.csv
 
 CheckpointName : checkpoint.pt
 
 CheckpointFreq : 5
 
-NSamples : 20
+NSamples : 1000
 
-NEpochs : 10
+NEpochs : 50
 
-BatchSize : 4
+BatchSize : 32
 
 KFold : 5
 
 Seed : 0
+
+Model :
+  Layers :
+    - 2
+    - 2
+    - 2
+    - 2
+  OutClasses : 5
+  Channels : 1
 
 TransformTrain:
   VerticalFlip: 

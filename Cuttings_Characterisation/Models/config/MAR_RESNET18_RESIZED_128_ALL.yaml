@@ -1,0 +1,53 @@
+---
+ModelName : MAR_RESNET18_RESIZED_128_ALL
+
+PathSave : Models/outputs/
+
+LoadPath : Dataset/train_mar.csv
+
+CheckpointName : checkpoint.pt
+
+CheckpointFreq : 5
+
+NSamples : 1000
+
+NEpochs : 200
+
+BatchSize : 32
+
+KFold : 5
+
+Seed : 0
+
+Model :
+  Layers :
+    - 2
+    - 2
+    - 2
+    - 2
+  OutClasses : 5
+  Channels : 1
+
+TransformTrain:
+  VerticalFlip: 
+    p : 0.5
+  HorizontalFlip : 
+    p : 0.5
+  Rotation : 
+    min : -90
+    max : 90
+  Resize :
+    width : 128
+    height : 128
+
+TransformTest:
+  Resize :
+    width : 128
+    height : 128
+ 
+Optimizer : 
+  lr : 0.001
+  weight_decay : 0.000001
+
+Scheduler :
+  gamma : 0.95

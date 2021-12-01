@@ -153,13 +153,14 @@ class BaseModelSingle(BaseModel):
             epoch_loss_list = []
 
         self.net = self.net.to(self.device)
+
         # Train Loop
         for epoch in range(n_epoch_finished, n_epochs):
             self.net.train()
             epoch_start_time = time.time()
             epoch_loss = 0.0
-            n_batches = len(train_loader)
 
+            # Train Loop
             for b, data in enumerate(train_loader):
                 # Gradient descent step
                 self.optimizer.zero_grad()
@@ -168,47 +169,53 @@ class BaseModelSingle(BaseModel):
                 if isinstance(loss, tuple):
                     loss, all_losses = loss
                     if b == 0:
-                        train_losses = {name : 0.0 for name in all_losses.keys()}
-                    train_losses = {name : (value + all_losses[name].item() if isinstance(all_losses[name], torch.Tensor) else value + all_losses[name]) for name, value in train_losses.items()}
+                        train_outputs = {name : 0.0 for name in all_losses.keys()}
+                    train_outputs = {name : (value + all_losses[name].item() if isinstance(all_losses[name], torch.Tensor) else value + all_losses[name]) for name, value in train_outputs.items()}
                 else:
                     if b == 0:
-                        train_losses = {'Loss' : 0.0}
-                    train_losses["Loss"] += loss.item()
+                        train_outputs = {'Loss' : 0.0}
+                    train_outputs["Loss"] += loss.item()
 
                 loss.backward()
                 self.optimizer.step()
 
                 if self.print_progress:
-                    self.print_progessbar(b, n_batches, name='Train Batch', size=100, erase=True)
+                    self.print_progessbar(b, train_loader.__len__(), name='Train Batch', size=100, erase=True)
 
-            # validate epoch
+            # Validate Loop
             if valid_loader:
                 self.net.eval()
-                valid_outputs = self.validate(valid_loader, epoch, *extra_valid_args, **extra_valid_kwargs)
-                # unpack format dictionnary if provided
-                if isinstance(valid_outputs, dict):
-                    valid_outputs_format = {key : '' for key in valid_outputs.keys()}
-                elif isinstance(valid_outputs, tuple) and all(isinstance(x, dict) for x in valid_outputs):
-                    valid_outputs_format = valid_outputs[1]
-                    valid_outputs = valid_outputs[0]
-                    valid_outputs_format = {k: (valid_outputs_format[k] if k in valid_outputs_format.keys() else '') for k in valid_outputs.keys()}
-                else:
-                    raise TypeError('valid output must be either dict(name : val) for 2-tuple (dict(name : val), dict(name : format))')
+                with torch.no_grad():
+                    for b, data in enumerate(valid_loader):
+                        loss = self.validate(data, *extra_valid_args, **extra_valid_kwargs)
+                        if isinstance(loss, tuple):
+                            loss, all_losses = loss
+                            if b == 0:
+                                valid_outputs = {name : 0.0 for name in all_losses.keys()}
+                            valid_outputs = {name : (value + all_losses[name].item() if isinstance(all_losses[name], torch.Tensor) else value + all_losses[name]) for name, value in valid_outputs.items()}
+                        else:
+                            if b == 0:
+                                valid_outputs = {'Valid Loss' : 0.0}
+                            valid_outputs["Valid Loss"] += loss.item()
+
+                        if self.print_progress:
+                            self.print_progessbar(b, valid_loader.__len__(), name='Valid Batch', size=100, erase=True)
+
             else:
-                valid_outputs, valid_outputs_format = {}, {}
+                valid_outputs = {}
 
             # print epoch stat
             frmt = f"0{len(str(n_epochs))}"
-            self.print_fn(f"Epoch {epoch+1:{frmt}}/{n_epochs:{frmt}} | "
-                          f"Time {timedelta(seconds=time.time()-epoch_start_time)} | "
-                          + "".join([f"{name} {loss_i / n_batches:.5f} | " for name, loss_i in train_losses.items()])
-                          + "".join([f"{name} {val:{valid_outputs_format[name]}} | " for name, val in valid_outputs.items()]))
+            self.print_fn(f"Epoch {epoch+1:{frmt}}/{n_epochs:{frmt}} | " # Epoch number
+                          f"Time {timedelta(seconds=time.time()-epoch_start_time)} | " # Time
+                          + "".join([f"{name} {loss_i / train_loader.__len__():.5f} | " for name, loss_i in train_outputs.items()]) # Train
+                          + "".join([f"{name} {loss_i / valid_loader.__len__():.5f} | " for name, loss_i in valid_outputs.items()])) # Validate
 
             epoch_loss_list.append([epoch+1,
-                                    {name : loss/n_batches for name, loss in train_losses.items()},
-                                    valid_outputs])
+                                    {name : loss/train_loader.__len__() for name, loss in train_outputs.items()},
+                                    {name : loss/valid_loader.__len__() for name, loss in valid_outputs.items()}])
 
-            # scheduler steps
+            # Scheduler steps
             if self.lr_scheduler:
                 self.lr_scheduler.step()
 
