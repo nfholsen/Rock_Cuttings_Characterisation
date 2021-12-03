@@ -9,17 +9,30 @@ CheckpointName : checkpoint.pt
 
 CheckpointFreq : 5
 
-NSamples : 1000
+NSamples : 10
 
 NEpochs : 50
 
-BatchSize : 32
+BatchSize : 4
+
+TrainTestSplit : 0.95
 
 KFold : 5
 
 Seed : 0
 
+Model :
+  Layers :
+    - 3
+    - 4
+    - 6
+    - 3
+  OutClasses : 5
+  Channels : 1
+
 TransformTrain:
+  Padding :
+    out_shape : 64
   VerticalFlip: 
     p : 0.5
   HorizontalFlip : 
@@ -27,17 +40,15 @@ TransformTrain:
   Rotation : 
     min : -90
     max : 90
-  Resize :
-    width : 256
-    height : 256
+
 
 TransformTest:
-  Resize :
-    width : 256
-    height : 256
+  Padding : 
+    out_shape : 64
  
 Optimizer : 
   lr : 0.001
   weight_decay : 0.000001
+
 Scheduler :
   gamma : 0.95

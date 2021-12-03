@@ -15,6 +15,8 @@ NEpochs : 200
 
 BatchSize : 32
 
+TrainTestSplit : 0.95
+
 KFold : 5
 
 Seed : 0

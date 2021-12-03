@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.optim.lr_scheduler import _LRScheduler
 
-from sklearn.model_selection import StratifiedKFold
+from sklearn.model_selection import StratifiedKFold, train_test_split
 from sklearn.metrics import accuracy_score
 
 from pathlib import Path
@@ -19,8 +19,6 @@ from Lamp.Model.BaseModel import *
 from Lamp.Model.Resnet import *
 
 # TODO's
-# - Change forward pass to return loss and compute accuracy for train 
-# - Adjust validation to be the same as train and adjust loss to match the two
 # - Prepare config files for all models to train
 
 # - Train model on whole data (the best one)
@@ -53,19 +51,6 @@ def set_parameter_requires_grad(model):
 def resnet(layers=[3, 4, 6, 3],channels=3, num_classes=1000):
     model = ResNet(BasicBlock,layers,channels=channels,num_classes=num_classes)
     return model
-
-class Transforms():
-    def __init__(self, *args, **kwargs):
-
-        self.transforms_list = args[0]
-        self.transforms_list.extend([MinMaxNormalization(),tf.ToTensor()])
-
-    def get_transforms(self):
-        transforms = tf.Compose(
-                self.transforms_list
-                )
-        return transforms
-    
 
 class Classifier(BaseModelSingle):
     def __init__(self, net: nn.Module, opt: Optimizer = None, sched: _LRScheduler = None, 
@@ -158,10 +143,18 @@ def main():
 
     # Read dataset
     dataframe = pd.read_csv(path_load_data,index_col=0)
-    dataframe = dataframe.groupby('Label').sample(n_samples,replace=True,random_state=seed).reset_index(drop=True) # Sample training data from the csv with replacement
+    
+    # Train Test Split
+    train_dataframe, _ = train_test_split(dataframe, test_size=(1 - inputs.TrainTestSplit),stratify=dataframe['Label'], random_state=inputs.Seed)
 
-    X = dataframe.iloc[:,:-1]
-    y = dataframe.iloc[:,-1]
+    # Reset Index
+    train_dataframe = train_dataframe.reset_index(drop=True)
+
+    # Samples
+    train_dataframe = train_dataframe.groupby('Label').sample(n_samples,replace=True,random_state=inputs.Seed).reset_index(drop=True)
+    
+    X = train_dataframe.iloc[:,:-1]
+    y = train_dataframe.iloc[:,-1]
 
     # Stratified KFold
     kf = StratifiedKFold(n_splits=k, random_state=seed, shuffle=True)
@@ -172,6 +165,7 @@ def main():
         "VerticalFlip":tf.RandomVerticalFlip,
         "HorizontalFlip":tf.RandomHorizontalFlip,
         "Rotation":tf.RandomRotation,
+        "CenterCrop":tf.CenterCrop,
         "Resize":tf.Resize,
     }
 
@@ -190,11 +184,11 @@ def main():
 
         if not os.path.isfile(save_model_path):
             trainDataset = Dataset(
-                dataframe.loc[train_index,:].reset_index(drop=True),
+                train_dataframe.loc[train_index,:].reset_index(drop=True),
                 transforms=transforms_train.get_transforms()
                 )
             testDataset = Dataset(
-                dataframe.loc[test_index,:].reset_index(drop=True),
+                train_dataframe.loc[test_index,:].reset_index(drop=True),
                 transforms=transforms_test.get_transforms()
                 )
 

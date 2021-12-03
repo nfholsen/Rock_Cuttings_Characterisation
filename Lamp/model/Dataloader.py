@@ -6,6 +6,18 @@ import PIL.ImageOps as ImageOps
 
 import numpy as np
 
+class Transforms():
+    def __init__(self, *args, **kwargs):
+
+        self.transforms_list = args[0]
+        self.transforms_list.extend([MinMaxNormalization(),tf.ToTensor()])
+
+    def get_transforms(self):
+        transforms = tf.Compose(
+                self.transforms_list
+                )
+        return transforms
+
 class Padding(object):
     def __init__(self, out_shape: tuple or int):
         if type(out_shape) is int:

@@ -158,10 +158,10 @@ class BaseModelSingle(BaseModel):
         for epoch in range(n_epoch_finished, n_epochs):
             self.net.train()
             epoch_start_time = time.time()
-            epoch_loss = 0.0
 
             # Train Loop
             for b, data in enumerate(train_loader):
+                print(data)
                 # Gradient descent step
                 self.optimizer.zero_grad()
                 loss = self.forward_loss(data)
@@ -260,7 +260,11 @@ class BaseModelSingle(BaseModel):
         if save_best_key:
             self.outputs['best_model'] = {save_best_key : best_metric, 'epoch' : best_epoch}
 
-    def validate(self, loader: DataLoader, epoch: int = None) -> Dict:
+    def predict(self, loader: DataLoader, epoch: int = None) -> Dict:
+        """ """
+
+
+    def validate(self, data: Tuple[Tensor]) -> Tensor:
         """
         --> Define how to validate the model. It should return a dictionnary with relevant validation metrics to be
         printed in the training evolution or to select the best model. If no metrics should be return, you should retrun
