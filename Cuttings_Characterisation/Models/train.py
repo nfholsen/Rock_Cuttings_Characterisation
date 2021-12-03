@@ -132,6 +132,8 @@ def main():
 
     path_load_data = f"{root_path}/{inputs.LoadPath}" # Path for the .csv file
     path_checkpoint = f"{path_model}/{inputs.CheckpointName}"
+
+    print(path_checkpoint)
     
     # Seed
     set_seed(seed)

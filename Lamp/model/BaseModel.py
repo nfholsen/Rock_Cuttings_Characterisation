@@ -161,7 +161,6 @@ class BaseModelSingle(BaseModel):
 
             # Train Loop
             for b, data in enumerate(train_loader):
-                print(data)
                 # Gradient descent step
                 self.optimizer.zero_grad()
                 loss = self.forward_loss(data)

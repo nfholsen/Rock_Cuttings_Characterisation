@@ -26,7 +26,7 @@ class Padding(object):
             self.width, self.height = out_shape[0], out_shape[1]
 
     def __call__(self, image):
-        im = ImageOps.pad(image,(self.width,self.height),method=Image.BICUBIC)
+        im = ImageOps.pad(image,(self.width,self.height),method=Image.BILINEAR)
         return im
 
 class MinMaxNormalization(object):

@@ -2,11 +2,12 @@ __author__ = 'nolsen'
 
 import glob, getopt, sys
 import numpy as np
+import sys, os
 
 from skimage.io import imsave
 from skimage import img_as_uint
 
-sys.path.append('C:/Users/nilso/Documents/EPFL/MA4/PDS Turberg/Rock_Cuttings_Characterisation/')
+sys.path.append(os.path.abspath(os.path.join(os.getcwd(), '../..')))
 
 from Lamp.AttrDict.AttrDict import *
 from Lamp.preprocessing.preprocessing import *

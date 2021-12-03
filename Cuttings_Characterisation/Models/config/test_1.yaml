@@ -11,7 +11,7 @@ CheckpointFreq : 5
 
 NSamples : 10
 
-NEpochs : 50
+NEpochs : 10
 
 BatchSize : 4
 
@@ -40,7 +40,6 @@ TransformTrain:
   Rotation : 
     min : -90
     max : 90
-
 
 TransformTest:
   Padding : 

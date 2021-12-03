@@ -17,15 +17,15 @@ Train:
     Label: 1
   ML:
     Folder:
-      - 'ML-DB-Geo1/'
-      - 'ML-DB-Geo2/'
-      - 'ML-DB-Geo3/'
+      - 'ML3-1-DL/'
+      - 'ML3-2-DL/'
+      - 'ML3-3-DL/'
     Label: 2
   MS:
     Folder:
-      - 'MS-DB-Geo01-1/'
-      - 'MS-DB-Geo01-2/'
-      - 'MS-DB-Geo01-3/'
+      - 'MS3-1-DL/'
+      - 'MS3-2-DL/'
+      - 'MS3-3-DL/'
     Label: 3
   OL:
     Folder:
