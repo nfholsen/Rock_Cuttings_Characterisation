@@ -107,20 +107,6 @@ class Image_Raw:
         histogram, bin_edges = np.histogram(self.new, bins=256)
         return histogram, bin_edges
 
-class Transforms:
-    def __init__(self,transforms):
-        """
-        Inputs : 
-            transforms : list of tranforms object
-        """
-        self.transforms = transforms
-
-    def apply_transforms(self):
-        for transform in self.transforms :
-            image = transform.apply(image)
-        
-        return image
-
 def AssertImage(image):
     try : 
         assert isinstance(image, Image_Raw)

@@ -6,7 +6,7 @@ import PIL.ImageOps as ImageOps
 
 import numpy as np
 
-class Transforms():
+class Transforms(object):
     def __init__(self, *args, **kwargs):
 
         self.transforms_list = args[0]
