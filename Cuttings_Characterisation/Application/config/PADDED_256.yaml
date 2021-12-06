@@ -1,0 +1,9 @@
+---
+
+Name : PADDED_256
+
+CSVPath : 'comparison_data.csv'
+
+TransformTest:
+  Padding : 
+    out_shape : 256
