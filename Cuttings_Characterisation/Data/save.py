@@ -5,7 +5,7 @@ import numpy as np
 import sys, os
 
 from skimage.io import imsave
-from skimage import img_as_uint
+from skimage import img_as_ubyte
 
 sys.path.append(os.path.abspath(os.path.join(os.getcwd(), '../..')))
 
@@ -22,7 +22,7 @@ def save_to_png(image,path_save,**kwargs):
                 for i_, region in enumerate(image.regions):
                     imToSave = region[kwargs['type']][kwargs['name']]
 
-                    imToSave = img_as_uint(imToSave)
+                    imToSave = img_as_ubyte(imToSave)
 
                     fname = f"{path_save}/{image_name}_{kwargs['type']}_{kwargs['name']}_{str(i_+1)}.png"
                     imsave(fname,imToSave)
@@ -31,7 +31,7 @@ def save_to_png(image,path_save,**kwargs):
                 for i_, region in enumerate(image.regions):
                     imToSave = region[kwargs['type']]['new']
 
-                    imToSave = img_as_uint(imToSave)
+                    imToSave = img_as_ubyte(imToSave)
 
                     fname = f"{path_save}/{image_name}_{kwargs['type']}_raw_{str(i_+1)}.png"
                     imsave(fname,imToSave)
