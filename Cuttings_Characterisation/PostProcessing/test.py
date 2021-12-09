@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score
 from pathlib import Path
 import numpy as np
 import pandas as pd
-import random, getopt, os, sys
+import random, getopt, os, sys, json
 
 sys.path.append(os.path.abspath(os.path.join(os.getcwd(), '../..')))
 
@@ -64,93 +64,85 @@ class Classifier(BaseModelSingle):
                 labels += list(zip(pred.cpu().data.tolist(), label.cpu().data.tolist()))
 
             pred, label = zip(*labels)
-        #acc = accuracy_score(np.array(label), np.array(pred))
-
+            
         return pred, label
 
-# Load config_file
-ifile = '../Models/config/MAR_RESNET34_PADDED_256_ALL.yaml'
+def main():
+    # Load config_file
+    # Read args from terminal
+    myopts, args = getopt.getopt(sys.argv[1:],"i:o:")
 
-inputs = load_config(ifile)
+    ifile=''
+    ofile='None'
 
-# Handle config_file inputs
-k = int(inputs.KFold)
-seed = int(inputs.Seed)
-n_samples = int(inputs.NSamples)
-layers = inputs.Model.Layers # [3, 4, 6, 3] for ResNet34 and [2, 2, 2, 2] for ResNet18
-classes = inputs.Model.OutClasses
-channels = inputs.Model.Channels
-batch_size = inputs.BatchSize
+    for o, a in myopts:
+        if o == '-i':
+            ifile=a
+        elif o == '-o':
+            ofile=a
+        else:
+            print("Usage: %s -i input -o output" % sys.argv[0])
+            
+    inputs = load_config(ifile)
 
-# Handle file paths
-root_path = os.path.abspath(os.path.join(os.getcwd(), '..')) # Workspace path to Cuttings_Characterisation 
-path_model = f"{root_path}/{inputs.PathSave}/{inputs.ModelName}"
-path_load_data = f"{root_path}/{inputs.LoadPath}" # Path for the .csv file
+    # Handle config_file inputs
+    seed = int(inputs.Seed)
+    layers = inputs.Model.Layers # [3, 4, 6, 3] for ResNet34 and [2, 2, 2, 2] for ResNet18
+    classes = inputs.Model.OutClasses
+    channels = inputs.Model.Channels
 
-# Seed
-set_seed(seed)
+    # Handle file paths
+    root_path = os.path.abspath(os.path.join(os.getcwd(), '..')) # Workspace path to Cuttings_Characterisation 
+    path_model = f"{root_path}/{inputs.PathSave}/{inputs.ModelName}"
+    path_load_data = f"{root_path}/{inputs.LoadPathTest}" # Path for the .csv file
 
-# Pytorch device
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-print(device)
-print(torch.cuda.get_device_name(device))
+    # Seed
+    set_seed(seed)
 
-# Read dataset
-dataframe = pd.read_csv(path_load_data,index_col=0)
+    # Pytorch device
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    print(device)
+    print(torch.cuda.get_device_name(device))
 
-# Train Test Split
-train_dataframe, _ = train_test_split(dataframe, test_size=(1 - inputs.TrainTestSplit),stratify=dataframe['Label'], random_state=inputs.Seed)
+    # Read dataset
+    dataframe = pd.read_csv(path_load_data,index_col=0)
 
-# Reset Index
-train_dataframe = train_dataframe.reset_index(drop=True)
+    # Transforms (other than MinMaxNorm and ToTensor)
+    dict_transform = {
+        "Padding":Padding,
+        "VerticalFlip":tf.RandomVerticalFlip,
+        "HorizontalFlip":tf.RandomHorizontalFlip,
+        "Rotation":tf.RandomRotation,
+        "CenterCrop":tf.CenterCrop,
+        "Resize":tf.Resize,
+        }
 
-# Samples
-train_dataframe = train_dataframe.groupby('Label').sample(n_samples,replace=True,random_state=inputs.Seed).reset_index(drop=True)
+    transforms_test = Transforms(
+        [dict_transform[key]([k for k in item.values()] if len(item.values()) > 1 else [k for k in item.values()][0]) for key, item in inputs.TransformTest.items()] 
+        )
 
-X = train_dataframe.iloc[:,:-1]
-y = train_dataframe.iloc[:,-1]
+    accuracy_scores = []
 
-# Stratified KFold
-kf = StratifiedKFold(n_splits=k, random_state=seed, shuffle=True)
-
-# Transforms (other than MinMaxNorm and ToTensor)
-dict_transform = {
-    "Padding":Padding,
-    "VerticalFlip":tf.RandomVerticalFlip,
-    "HorizontalFlip":tf.RandomHorizontalFlip,
-    "Rotation":tf.RandomRotation,
-    "CenterCrop":tf.CenterCrop,
-    "Resize":tf.Resize,
-    }
-
-transforms_test = Transforms(
-    [dict_transform[key]([k for k in item.values()] if len(item.values()) > 1 else [k for k in item.values()][0]) for key, item in inputs.TransformTest.items()] 
-    )
-
-accuracy_scores = []
-for i_, (train_index, test_index) in enumerate(kf.split(X,y)):
-
-    model_name = f"model_{i_}.pt"
+    model_name = f"model_all.pt"
     save_model_path = f"{path_model}/{model_name}"
 
-    print('Model :',save_model_path)
-
     testDataset = Dataset(
-        train_dataframe.loc[test_index,:].reset_index(drop=True),
+        dataframe.reset_index(drop=True),
         transforms=transforms_test.get_transforms()
         )
 
     test_dataloader = torch.utils.data.DataLoader(
         testDataset, 
+        batch_size=4,
         shuffle=True
         )
 
     net = resnet(layers=layers,channels=channels,num_classes=classes)
 
     classifier = Classifier(
-                net=net, 
-                device=device
-                )
+        net=net, 
+        device=device
+        )
 
     classifier.load(save_model_path)
 
@@ -158,4 +150,25 @@ for i_, (train_index, test_index) in enumerate(kf.split(X,y)):
 
     accuracy_scores.append(accuracy_score(np.array(label), np.array(pred)))
 
-print(accuracy_scores)
+    dict_acc_scores = {inputs.ModelName : accuracy_scores}
+
+    if os.path.isfile("test.json"):
+        with open('test.json', 'r') as openfile:
+            json_object = json.load(openfile)
+
+        for key, value in dict_acc_scores.items():
+            json_object[key] = value
+
+        json_object = json.dumps(json_object, indent = 4)
+
+        with open("test.json", "w") as outfile:
+            outfile.write(json_object)
+
+    else :
+        json_object = json.dumps(dict_acc_scores, indent = 4)
+
+        with open("test.json", "w") as outfile:
+            outfile.write(json_object)
+
+if __name__ == "__main__":
+    main()
