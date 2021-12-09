@@ -1,0 +1,10 @@
+---
+
+Name : RESIZED_256
+
+CSVPath : 'comparison_data.csv'
+
+TransformTest:
+  Resize :
+    width : 256
+    height : 256

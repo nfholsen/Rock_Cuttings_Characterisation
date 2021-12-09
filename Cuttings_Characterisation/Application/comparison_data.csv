@@ -1,101 +1,101 @@
-,Paths,Label,best_model,baseline_model,pred_app_06121136,time_app_06121136,PADDED_256_06121441,PADDED_256_time_06121441
-0,../Data/Train/BL3-1-DL\slice01340 (2020_05_17 16_28_34 UTC)_mar_raw_2.png,0,0,0,4.0,0.19,4.0,6.71
-1,../Data/Train/BL3-1-DL\slice00670 (2020_05_17 16_28_34 UTC)_mar_raw_6.png,0,0,0,2.0,0.21,4.0,9.47
-2,../Data/Train/BL3-4-DL\slice01180 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,0,4,4,1.0,0.18,4.0,10.68
-3,../Data/Train/BL3-4-DL\slice01140 (2020_05_17 16_28_34 UTC)_mar_raw_6.png,0,0,0,1.0,0.19,0.0,3.83
-4,../Data/Train/BL3-4-DL\slice01140 (2020_05_17 16_28_34 UTC)_mar_raw_6.png,0,0,0,2.0,0.18,0.0,4.44
-5,../Data/Train/BL3-5-DL\slice00550 (2020_05_17 16_28_34 UTC)_mar_raw_4.png,0,0,0,2.0,0.19,4.0,3.58
-6,../Data/Train/BL3-5-DL\slice01170 (2020_05_17 16_28_34 UTC)_mar_raw_3.png,0,0,0,3.0,0.17,0.0,8.52
-7,../Data/Train/BL3-1-DL\slice00480 (2020_05_17 16_28_34 UTC)_mar_raw_6.png,0,0,0,2.0,0.2,0.0,6.72
-8,../Data/Train/BL3-4-DL\slice00790 (2020_05_17 16_28_34 UTC)_mar_raw_4.png,0,0,0,2.0,0.18,0.0,14.95
-9,../Data/Train/BL3-1-DL\slice01140 (2020_05_17 16_28_34 UTC)_mar_raw_3.png,0,0,0,1.0,0.21,0.0,6.99
-10,../Data/Train/BL3-1-DL\slice00540 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,0,0,0,4.0,0.19,0.0,6.9
-11,../Data/Train/BL3-5-DL\slice00760 (2020_05_17 16_28_34 UTC)_mar_raw_2.png,0,0,0,1.0,0.18,0.0,6.04
-12,../Data/Train/BL3-5-DL\slice00760 (2020_05_17 16_28_34 UTC)_mar_raw_2.png,0,0,0,3.0,0.2,0.0,9.45
-13,../Data/Train/BL3-1-DL\slice01290 (2020_05_17 16_28_34 UTC)_mar_raw_1.png,0,0,0,1.0,0.18,0.0,5.82
-14,../Data/Train/BL3-5-DL\slice01130 (2020_05_17 16_28_34 UTC)_mar_raw_6.png,0,0,0,0.0,0.2,0.0,5.72
-15,../Data/Train/BL3-1-DL\slice00580 (2020_05_17 16_28_34 UTC)_mar_raw_7.png,0,0,0,3.0,0.18,0.0,5.52
-16,../Data/Train/BL3-1-DL\slice01030 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,0,0,0,3.0,0.21,0.0,0.81
-17,../Data/Train/BL3-5-DL\slice00440 (2020_05_17 16_28_34 UTC)_mar_raw_6.png,0,0,0,2.0,0.19,0.0,5.9
-18,../Data/Train/BL3-1-DL\slice01140 (2020_05_17 16_28_34 UTC)_mar_raw_3.png,0,0,0,2.0,0.17,4.0,6.57
-19,../Data/Train/BL3-5-DL\slice00730 (2020_05_17 16_28_34 UTC)_mar_raw_7.png,0,0,0,1.0,6.42,0.0,4.07
-20,../Data/Train/GN1-3-DL\slice00840 (2020_05_17 16_28_34 UTC)_mar_raw_3.png,1,1,1,4.0,0.19,1.0,2.45
-21,../Data/Train/GN1-3-DL\slice00570 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,1,1,1,2.0,0.19,1.0,1.43
-22,../Data/Train/GN1-2-DL\slice00800 (2020_05_17 16_28_34 UTC)_mar_raw_1.png,1,1,1,1.0,0.18,1.0,3.3
-23,../Data/Train/GN1-1-DL\slice00630 (2020_05_17 16_28_34 UTC)_mar_raw_2.png,1,1,1,2.0,0.21,1.0,2.82
-24,../Data/Train/GN1-3-DL\slice00740 (2020_05_17 16_28_34 UTC)_mar_raw_2.png,1,1,1,0.0,0.19,1.0,1.53
-25,../Data/Train/GN1-2-DL\slice00860 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,1,1,1,3.0,0.2,1.0,1.92
-26,../Data/Train/GN1-2-DL\slice00550 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,1,1,1,3.0,0.17,1.0,1.03
-27,../Data/Train/GN1-3-DL\slice00540 (2020_05_17 16_28_34 UTC)_mar_raw_6.png,1,1,1,1.0,0.19,1.0,1.43
-28,../Data/Train/GN1-3-DL\slice00230 (2020_05_17 16_28_34 UTC)_mar_raw_3.png,1,1,1,0.0,0.19,1.0,1.38
-29,../Data/Train/GN1-1-DL\slice00870 (2020_05_17 16_28_34 UTC)_mar_raw_8.png,1,1,1,1.0,0.2,1.0,1.85
-30,../Data/Train/GN1-2-DL\slice00910 (2020_05_17 16_28_34 UTC)_mar_raw_7.png,1,1,1,2.0,0.17,1.0,3.71
-31,../Data/Train/GN1-3-DL\slice00540 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,1,1,1,1.0,0.18,1.0,0.75
-32,../Data/Train/GN1-2-DL\slice00890 (2020_05_17 16_28_34 UTC)_mar_raw_4.png,1,1,1,1.0,0.19,1.0,3.84
-33,../Data/Train/GN1-3-DL\slice00250 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,1,1,1,4.0,0.21,1.0,4.03
-34,../Data/Train/GN1-3-DL\slice00640 (2020_05_17 16_28_34 UTC)_mar_raw_6.png,1,1,1,4.0,0.22,1.0,17.56
-35,../Data/Train/GN1-3-DL\slice00320 (2020_05_17 16_28_34 UTC)_mar_raw_4.png,1,1,1,3.0,0.19,1.0,2.18
-36,../Data/Train/GN1-3-DL\slice00320 (2020_05_17 16_28_34 UTC)_mar_raw_4.png,1,1,1,3.0,0.21,1.0,0.88
-37,../Data/Train/GN1-3-DL\slice00600 (2020_05_17 16_28_34 UTC)_mar_raw_2.png,1,1,1,3.0,0.19,1.0,1.31
-38,../Data/Train/GN1-2-DL\slice00270 (2020_05_17 16_28_34 UTC)_mar_raw_4.png,1,1,1,1.0,0.19,1.0,1.39
-39,../Data/Train/GN1-3-DL\slice00910 (2020_05_17 16_28_34 UTC)_mar_raw_2.png,1,1,1,0.0,0.19,1.0,2.93
-40,../Data/Train/ML3-1-DL\slice00320_mar_raw_2.png,2,2,2,2.0,0.19,4.0,9.65
-41,../Data/Train/ML3-1-DL\slice01200_mar_raw_2.png,2,2,2,2.0,0.19,2.0,1.68
-42,../Data/Train/ML3-2-DL\slice00400_mar_raw_5.png,2,2,2,2.0,0.2,2.0,2.2
-43,../Data/Train/ML3-2-DL\slice00640_mar_raw_8.png,2,2,2,4.0,0.17,4.0,18.33
-44,../Data/Train/ML3-3-DL\slice00900_mar_raw_3.png,2,2,2,1.0,0.17,2.0,0.82
-45,../Data/Train/ML3-1-DL\slice00520_mar_raw_3.png,2,2,2,1.0,0.19,2.0,6.01
-46,../Data/Train/ML3-3-DL\slice00540_mar_raw_6.png,2,2,2,4.0,0.19,2.0,6.61
-47,../Data/Train/ML3-3-DL\slice01000_mar_raw_5.png,2,2,2,1.0,0.18,2.0,1.02
-48,../Data/Train/ML3-3-DL\slice00370_mar_raw_1.png,2,2,2,3.0,0.19,2.0,1.96
-49,../Data/Train/ML3-3-DL\slice00310_mar_raw_5.png,2,2,2,2.0,0.2,2.0,1.7
-50,../Data/Train/ML3-3-DL\slice00570_mar_raw_4.png,2,2,2,3.0,0.17,2.0,1.92
-51,../Data/Train/ML3-2-DL\slice00210_mar_raw_6.png,2,2,2,0.0,0.2,0.0,7.8
-52,../Data/Train/ML3-3-DL\slice00410_mar_raw_2.png,2,2,2,3.0,0.18,2.0,1.81
-53,../Data/Train/ML3-3-DL\slice00410_mar_raw_2.png,2,2,2,3.0,0.18,2.0,1.35
-54,../Data/Train/ML3-3-DL\slice00700_mar_raw_6.png,2,2,2,1.0,0.14,2.0,2.15
-55,../Data/Train/ML3-1-DL\slice00670_mar_raw_8.png,2,2,2,2.0,0.18,2.0,1.91
-56,../Data/Train/ML3-3-DL\slice00560_mar_raw_4.png,2,2,2,3.0,0.18,2.0,1.34
-57,../Data/Train/ML3-2-DL\slice00870_mar_raw_2.png,2,2,2,1.0,0.2,2.0,2.34
-58,../Data/Train/ML3-1-DL\slice00490_mar_raw_1.png,2,2,2,3.0,0.18,2.0,0.81
-59,../Data/Train/ML3-1-DL\slice00690_mar_raw_3.png,2,2,2,2.0,0.19,2.0,23.03
-60,../Data/Train/MS3-3-DL\slice00410_mar_raw_2.png,3,3,3,3.0,0.21,3.0,2.79
-61,../Data/Train/MS3-1-DL\slice00950_mar_raw_1.png,3,3,3,2.0,0.19,3.0,2.27
-62,../Data/Train/MS3-1-DL\slice00410_mar_raw_5.png,3,3,3,3.0,0.19,3.0,1.13
-63,../Data/Train/MS3-2-DL\slice01020_mar_raw_4.png,3,3,3,2.0,0.19,3.0,1.51
-64,../Data/Train/MS3-1-DL\slice00700_mar_raw_2.png,3,3,3,3.0,0.18,3.0,0.86
-65,../Data/Train/MS3-1-DL\slice01170_mar_raw_3.png,3,3,3,2.0,0.18,3.0,7.74
-66,../Data/Train/MS3-3-DL\slice01140_mar_raw_6.png,3,3,3,2.0,0.16,3.0,3.62
-67,../Data/Train/MS3-1-DL\slice00330_mar_raw_2.png,3,3,3,3.0,0.18,3.0,1.42
-68,../Data/Train/MS3-2-DL\slice00720_mar_raw_7.png,3,3,3,2.0,0.17,3.0,3.83
-69,../Data/Train/MS3-1-DL\slice00820_mar_raw_5.png,3,3,3,3.0,0.22,3.0,1.64
-70,../Data/Train/MS3-3-DL\slice00960_mar_raw_3.png,3,3,3,0.0,0.17,3.0,1.26
-71,../Data/Train/MS3-2-DL\slice00730_mar_raw_7.png,3,3,3,4.0,0.2,3.0,7.4
-72,../Data/Train/MS3-2-DL\slice00540_mar_raw_5.png,3,3,3,1.0,0.2,3.0,2.38
-73,../Data/Train/MS3-2-DL\slice00460_mar_raw_4.png,3,3,3,4.0,0.18,3.0,1.74
-74,../Data/Train/MS3-1-DL\slice00620_mar_raw_6.png,3,3,3,3.0,0.19,3.0,1.25
-75,../Data/Train/MS3-1-DL\slice00600_mar_raw_1.png,3,3,3,3.0,0.19,3.0,4.13
-76,../Data/Train/MS3-1-DL\slice00950_mar_raw_1.png,3,3,3,1.0,0.17,3.0,1.2
-77,../Data/Train/MS3-1-DL\slice00560_mar_raw_3.png,3,3,3,1.0,0.18,3.0,1.26
-78,../Data/Train/MS3-3-DL\slice01090_mar_raw_2.png,3,3,3,2.0,0.2,3.0,3.23
-79,../Data/Train/MS3-2-DL\slice00840_mar_raw_5.png,3,3,3,3.0,0.19,3.0,1.33
-80,../Data/Train/OL4-3-DL\slice00620 (2020_05_17 16_28_34 UTC)_mar_raw_1.png,4,4,4,2.0,0.17,4.0,1.14
-81,../Data/Train/OL7-3-DL\slice01050 (2020_05_17 16_28_34 UTC)_mar_raw_3.png,4,4,4,0.0,0.17,0.0,12.15
-82,../Data/Train/OL-7-1-DL\slice00620 (2020_05_17 16_28_34 UTC)_mar_raw_6.png,4,4,4,1.0,0.19,2.0,1.61
-83,../Data/Train/OL4-3-DL\slice00470 (2020_05_17 16_28_34 UTC)_mar_raw_2.png,4,4,4,0.0,0.19,4.0,2.75
-84,../Data/Train/OL4-3-DL\slice01080 (2020_05_17 16_28_34 UTC)_mar_raw_3.png,4,4,4,1.0,0.18,4.0,3.9
-85,../Data/Train/OL4-3-DL\slice00580 (2020_05_17 16_28_34 UTC)_mar_raw_3.png,4,4,4,1.0,0.83,4.0,1.97
-86,../Data/Train/OL7-3-DL\slice00650 (2020_05_17 16_28_34 UTC)_mar_raw_4.png,4,4,4,2.0,0.19,2.0,1.49
-87,../Data/Train/OL-7-1-DL\slice00460 (2020_05_17 16_28_34 UTC)_mar_raw_3.png,4,4,4,1.0,0.18,4.0,4.86
-88,../Data/Train/OL-7-1-DL\slice00750 (2020_05_17 16_28_34 UTC)_mar_raw_3.png,4,4,4,1.0,0.18,2.0,15.05
-89,../Data/Train/OL-7-1-DL\slice00930 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,4,4,4,4.0,0.19,4.0,4.2
-90,../Data/Train/OL7-3-DL\slice00960 (2020_05_17 16_28_34 UTC)_mar_raw_1.png,4,4,4,3.0,0.17,4.0,5.47
-91,../Data/Train/OL7-3-DL\slice00370 (2020_05_17 16_28_34 UTC)_mar_raw_1.png,4,2,2,1.0,0.18,2.0,2.55
-92,../Data/Train/OL4-3-DL\slice00470 (2020_05_17 16_28_34 UTC)_mar_raw_4.png,4,4,4,4.0,0.22,4.0,1.79
-93,../Data/Train/OL7-3-DL\slice00420 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,4,4,4,2.0,0.2,4.0,3.98
-94,../Data/Train/OL4-3-DL\slice00710 (2020_05_17 16_28_34 UTC)_mar_raw_1.png,4,4,4,2.0,0.15,4.0,2.0
-95,../Data/Train/OL4-3-DL\slice01090 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,4,4,4,1.0,0.19,4.0,1.23
-96,../Data/Train/OL7-3-DL\slice00370 (2020_05_17 16_28_34 UTC)_mar_raw_4.png,4,4,4,0.0,0.19,4.0,5.75
-97,../Data/Train/OL-7-1-DL\slice00270 (2020_05_17 16_28_34 UTC)_mar_raw_4.png,4,4,4,3.0,0.19,2.0,2.71
-98,../Data/Train/OL-7-1-DL\slice00600 (2020_05_17 16_28_34 UTC)_mar_raw_1.png,4,4,4,2.0,0.16,2.0,1.16
-99,../Data/Train/OL4-3-DL\slice01090 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,4,4,4,4.0,0.18,4.0,2.58
+,Paths,Label,best_model,baseline_model,PADDED_256_08121352,PADDED_256_time_08121352,RESIZED_256_08121358,RESIZED_256_time_08121358,MAR_RESNET34_PADDED_256_ALL_best_model,MAR_RESNET34_PADDED_256_ALL_baseline_model,CROPPED_256_08121900,CROPPED_256_time_08121900
+0,../Data/Train/BL3-1-DL\slice01340 (2020_05_17 16_28_34 UTC)_mar_raw_2.png,0,0,0,0.0,4.6,0.0,4.09,0,0,4.0,2.35
+1,../Data/Train/BL3-1-DL\slice00670 (2020_05_17 16_28_34 UTC)_mar_raw_6.png,0,0,0,0.0,6.07,0.0,4.17,0,0,0.0,1.93
+2,../Data/Train/BL3-4-DL\slice01180 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,0,0,0,0.0,1.88,4.0,7.59,0,0,4.0,17.78
+3,../Data/Train/BL3-4-DL\slice01140 (2020_05_17 16_28_34 UTC)_mar_raw_6.png,0,0,0,0.0,1.45,0.0,1.27,0,0,4.0,2.14
+4,../Data/Train/BL3-4-DL\slice01140 (2020_05_17 16_28_34 UTC)_mar_raw_6.png,0,0,0,0.0,1.39,0.0,1.12,0,0,0.0,8.88
+5,../Data/Train/BL3-5-DL\slice00550 (2020_05_17 16_28_34 UTC)_mar_raw_4.png,0,0,0,0.0,3.33,4.0,3.2,0,0,4.0,1.88
+6,../Data/Train/BL3-5-DL\slice01170 (2020_05_17 16_28_34 UTC)_mar_raw_3.png,0,0,0,0.0,2.1,0.0,9.04,0,0,4.0,4.5
+7,../Data/Train/BL3-1-DL\slice00480 (2020_05_17 16_28_34 UTC)_mar_raw_6.png,0,0,0,0.0,1.04,0.0,0.86,0,0,0.0,1.77
+8,../Data/Train/BL3-4-DL\slice00790 (2020_05_17 16_28_34 UTC)_mar_raw_4.png,0,0,0,0.0,2.08,0.0,1.75,0,0,0.0,1.41
+9,../Data/Train/BL3-1-DL\slice01140 (2020_05_17 16_28_34 UTC)_mar_raw_3.png,0,0,0,0.0,1.21,0.0,4.17,0,0,0.0,5.58
+10,../Data/Train/BL3-1-DL\slice00540 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,0,0,0,0.0,1.86,0.0,1.68,0,0,2.0,0.96
+11,../Data/Train/BL3-5-DL\slice00760 (2020_05_17 16_28_34 UTC)_mar_raw_2.png,0,0,0,0.0,2.95,0.0,1.09,0,0,0.0,1.15
+12,../Data/Train/BL3-5-DL\slice00760 (2020_05_17 16_28_34 UTC)_mar_raw_2.png,0,0,0,0.0,1.65,0.0,1.23,0,0,0.0,1.51
+13,../Data/Train/BL3-1-DL\slice01290 (2020_05_17 16_28_34 UTC)_mar_raw_1.png,0,0,0,0.0,1.76,0.0,1.34,0,0,2.0,2.01
+14,../Data/Train/BL3-5-DL\slice01130 (2020_05_17 16_28_34 UTC)_mar_raw_6.png,0,0,0,0.0,2.02,0.0,0.65,0,0,4.0,1.54
+15,../Data/Train/BL3-1-DL\slice00580 (2020_05_17 16_28_34 UTC)_mar_raw_7.png,0,0,0,0.0,1.38,0.0,1.25,0,0,4.0,2.37
+16,../Data/Train/BL3-1-DL\slice01030 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,0,0,0,0.0,6.32,0.0,1.23,0,0,0.0,2.03
+17,../Data/Train/BL3-5-DL\slice00440 (2020_05_17 16_28_34 UTC)_mar_raw_6.png,0,0,0,0.0,1.1,0.0,1.21,0,0,0.0,1.66
+18,../Data/Train/BL3-1-DL\slice01140 (2020_05_17 16_28_34 UTC)_mar_raw_3.png,0,0,0,0.0,1.63,0.0,1.45,0,0,0.0,0.85
+19,../Data/Train/BL3-5-DL\slice00730 (2020_05_17 16_28_34 UTC)_mar_raw_7.png,0,0,0,0.0,2.25,0.0,1.19,0,0,0.0,1.41
+20,../Data/Train/GN1-3-DL\slice00840 (2020_05_17 16_28_34 UTC)_mar_raw_3.png,1,1,1,1.0,1.5,1.0,1.86,1,1,3.0,6.59
+21,../Data/Train/GN1-3-DL\slice00570 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,1,1,1,1.0,2.14,1.0,1.81,1,1,1.0,4.48
+22,../Data/Train/GN1-2-DL\slice00800 (2020_05_17 16_28_34 UTC)_mar_raw_1.png,1,1,1,1.0,2.02,1.0,2.12,1,1,1.0,1.28
+23,../Data/Train/GN1-1-DL\slice00630 (2020_05_17 16_28_34 UTC)_mar_raw_2.png,1,1,1,1.0,1.63,1.0,1.87,1,1,1.0,1.61
+24,../Data/Train/GN1-3-DL\slice00740 (2020_05_17 16_28_34 UTC)_mar_raw_2.png,1,1,1,1.0,2.04,1.0,2.39,1,1,1.0,1.71
+25,../Data/Train/GN1-2-DL\slice00860 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,1,1,1,1.0,1.42,1.0,1.65,1,1,1.0,1.03
+26,../Data/Train/GN1-2-DL\slice00550 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,1,1,1,1.0,4.1,1.0,2.0,1,1,1.0,1.8
+27,../Data/Train/GN1-3-DL\slice00540 (2020_05_17 16_28_34 UTC)_mar_raw_6.png,1,1,1,1.0,0.96,1.0,3.25,1,1,1.0,1.18
+28,../Data/Train/GN1-3-DL\slice00230 (2020_05_17 16_28_34 UTC)_mar_raw_3.png,1,1,1,1.0,3.14,1.0,0.86,1,1,1.0,2.57
+29,../Data/Train/GN1-1-DL\slice00870 (2020_05_17 16_28_34 UTC)_mar_raw_8.png,1,1,1,1.0,1.68,1.0,1.36,1,1,1.0,0.78
+30,../Data/Train/GN1-2-DL\slice00910 (2020_05_17 16_28_34 UTC)_mar_raw_7.png,1,1,1,1.0,2.44,1.0,4.22,1,1,1.0,2.48
+31,../Data/Train/GN1-3-DL\slice00540 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,1,1,1,1.0,2.99,1.0,3.36,1,1,3.0,10.13
+32,../Data/Train/GN1-2-DL\slice00890 (2020_05_17 16_28_34 UTC)_mar_raw_4.png,1,1,1,1.0,1.9,1.0,2.5,1,1,1.0,1.04
+33,../Data/Train/GN1-3-DL\slice00250 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,1,1,1,1.0,3.49,1.0,3.51,1,1,1.0,3.17
+34,../Data/Train/GN1-3-DL\slice00640 (2020_05_17 16_28_34 UTC)_mar_raw_6.png,1,1,1,3.0,2.89,1.0,5.3,1,1,1.0,1.56
+35,../Data/Train/GN1-3-DL\slice00320 (2020_05_17 16_28_34 UTC)_mar_raw_4.png,1,1,1,1.0,1.54,1.0,1.92,1,1,1.0,2.63
+36,../Data/Train/GN1-3-DL\slice00320 (2020_05_17 16_28_34 UTC)_mar_raw_4.png,1,1,1,1.0,1.33,1.0,3.26,1,1,1.0,1.48
+37,../Data/Train/GN1-3-DL\slice00600 (2020_05_17 16_28_34 UTC)_mar_raw_2.png,1,1,1,1.0,1.66,1.0,1.39,1,1,1.0,1.45
+38,../Data/Train/GN1-2-DL\slice00270 (2020_05_17 16_28_34 UTC)_mar_raw_4.png,1,1,1,1.0,2.36,1.0,2.87,1,1,1.0,3.0
+39,../Data/Train/GN1-3-DL\slice00910 (2020_05_17 16_28_34 UTC)_mar_raw_2.png,1,1,1,1.0,4.0,1.0,1.48,1,1,1.0,4.78
+40,../Data/Train/ML3-1-DL\slice00320_mar_raw_2.png,2,2,2,0.0,14.95,0.0,2.54,2,2,0.0,5.16
+41,../Data/Train/ML3-1-DL\slice01200_mar_raw_2.png,2,2,2,2.0,2.56,2.0,1.46,2,2,2.0,4.04
+42,../Data/Train/ML3-2-DL\slice00400_mar_raw_5.png,2,2,2,2.0,2.16,2.0,0.73,2,2,2.0,0.71
+43,../Data/Train/ML3-2-DL\slice00640_mar_raw_8.png,2,2,2,2.0,8.89,2.0,11.04,2,2,2.0,1.42
+44,../Data/Train/ML3-3-DL\slice00900_mar_raw_3.png,2,2,2,2.0,1.36,2.0,0.99,2,2,4.0,5.22
+45,../Data/Train/ML3-1-DL\slice00520_mar_raw_3.png,2,2,2,2.0,1.89,2.0,0.97,2,2,4.0,2.97
+46,../Data/Train/ML3-3-DL\slice00540_mar_raw_6.png,2,2,2,2.0,1.45,2.0,1.71,2,2,2.0,3.62
+47,../Data/Train/ML3-3-DL\slice01000_mar_raw_5.png,2,2,2,2.0,1.19,2.0,1.21,2,2,2.0,1.95
+48,../Data/Train/ML3-3-DL\slice00370_mar_raw_1.png,2,2,2,2.0,1.21,2.0,1.38,2,2,2.0,0.85
+49,../Data/Train/ML3-3-DL\slice00310_mar_raw_5.png,2,2,2,2.0,4.19,2.0,1.45,2,2,2.0,1.15
+50,../Data/Train/ML3-3-DL\slice00570_mar_raw_4.png,2,2,2,2.0,1.49,2.0,0.77,2,2,2.0,2.55
+51,../Data/Train/ML3-2-DL\slice00210_mar_raw_6.png,2,2,2,2.0,12.0,2.0,7.51,2,2,4.0,5.05
+52,../Data/Train/ML3-3-DL\slice00410_mar_raw_2.png,2,2,2,2.0,2.92,2.0,2.22,2,2,0.0,1.16
+53,../Data/Train/ML3-3-DL\slice00410_mar_raw_2.png,2,2,2,2.0,1.31,2.0,1.11,2,2,2.0,4.0
+54,../Data/Train/ML3-3-DL\slice00700_mar_raw_6.png,2,2,2,2.0,1.2,2.0,1.17,2,2,2.0,3.32
+55,../Data/Train/ML3-1-DL\slice00670_mar_raw_8.png,2,2,2,2.0,1.64,2.0,0.94,2,2,2.0,1.43
+56,../Data/Train/ML3-3-DL\slice00560_mar_raw_4.png,2,2,2,2.0,1.62,2.0,0.71,2,2,2.0,2.97
+57,../Data/Train/ML3-2-DL\slice00870_mar_raw_2.png,2,2,2,2.0,1.43,2.0,1.48,2,2,2.0,4.8
+58,../Data/Train/ML3-1-DL\slice00490_mar_raw_1.png,2,2,2,2.0,1.16,2.0,0.94,2,2,2.0,2.28
+59,../Data/Train/ML3-1-DL\slice00690_mar_raw_3.png,2,2,2,2.0,2.64,2.0,1.6,2,2,2.0,2.14
+60,../Data/Train/MS3-3-DL\slice00410_mar_raw_2.png,3,3,3,3.0,1.49,3.0,1.42,3,3,3.0,2.06
+61,../Data/Train/MS3-1-DL\slice00950_mar_raw_1.png,3,3,3,3.0,2.53,3.0,3.06,3,3,3.0,1.52
+62,../Data/Train/MS3-1-DL\slice00410_mar_raw_5.png,3,3,3,3.0,2.13,3.0,1.71,3,3,3.0,1.81
+63,../Data/Train/MS3-2-DL\slice01020_mar_raw_4.png,3,3,3,3.0,2.42,3.0,2.23,3,3,3.0,1.78
+64,../Data/Train/MS3-1-DL\slice00700_mar_raw_2.png,3,3,3,3.0,3.15,3.0,1.86,3,3,3.0,2.79
+65,../Data/Train/MS3-1-DL\slice01170_mar_raw_3.png,3,3,3,3.0,2.92,3.0,1.5,3,3,3.0,3.87
+66,../Data/Train/MS3-3-DL\slice01140_mar_raw_6.png,3,3,3,3.0,1.78,3.0,2.22,3,3,0.0,3.89
+67,../Data/Train/MS3-1-DL\slice00330_mar_raw_2.png,3,3,3,3.0,1.39,3.0,9.13,3,3,3.0,2.25
+68,../Data/Train/MS3-2-DL\slice00720_mar_raw_7.png,3,3,3,3.0,1.96,3.0,0.7,3,3,3.0,3.48
+69,../Data/Train/MS3-1-DL\slice00820_mar_raw_5.png,3,3,3,3.0,3.44,3.0,2.04,3,3,0.0,3.39
+70,../Data/Train/MS3-3-DL\slice00960_mar_raw_3.png,3,3,3,3.0,1.23,3.0,3.72,3,3,3.0,1.11
+71,../Data/Train/MS3-2-DL\slice00730_mar_raw_7.png,3,3,3,3.0,1.8,3.0,1.59,3,3,3.0,2.99
+72,../Data/Train/MS3-2-DL\slice00540_mar_raw_5.png,3,3,3,3.0,1.97,3.0,1.98,3,3,3.0,1.55
+73,../Data/Train/MS3-2-DL\slice00460_mar_raw_4.png,3,3,3,3.0,2.34,3.0,1.4,3,3,3.0,2.39
+74,../Data/Train/MS3-1-DL\slice00620_mar_raw_6.png,3,3,3,3.0,1.44,3.0,1.25,3,3,3.0,0.78
+75,../Data/Train/MS3-1-DL\slice00600_mar_raw_1.png,3,3,3,3.0,1.47,3.0,1.57,3,3,3.0,2.47
+76,../Data/Train/MS3-1-DL\slice00950_mar_raw_1.png,3,3,3,3.0,1.77,3.0,8.39,3,3,0.0,5.8
+77,../Data/Train/MS3-1-DL\slice00560_mar_raw_3.png,3,3,3,3.0,1.91,3.0,2.0,3,3,3.0,1.37
+78,../Data/Train/MS3-3-DL\slice01090_mar_raw_2.png,3,3,3,3.0,1.58,3.0,2.47,3,3,3.0,3.3
+79,../Data/Train/MS3-2-DL\slice00840_mar_raw_5.png,3,3,3,3.0,1.62,3.0,1.24,3,3,3.0,1.3
+80,../Data/Train/OL4-3-DL\slice00620 (2020_05_17 16_28_34 UTC)_mar_raw_1.png,4,4,4,4.0,2.96,4.0,1.28,4,4,4.0,2.88
+81,../Data/Train/OL7-3-DL\slice01050 (2020_05_17 16_28_34 UTC)_mar_raw_3.png,4,4,4,4.0,4.14,2.0,1.3,4,4,2.0,4.7
+82,../Data/Train/OL-7-1-DL\slice00620 (2020_05_17 16_28_34 UTC)_mar_raw_6.png,4,4,4,4.0,2.27,4.0,3.61,4,4,2.0,3.5
+83,../Data/Train/OL4-3-DL\slice00470 (2020_05_17 16_28_34 UTC)_mar_raw_2.png,4,4,4,4.0,3.61,4.0,1.4,4,4,2.0,1.12
+84,../Data/Train/OL4-3-DL\slice01080 (2020_05_17 16_28_34 UTC)_mar_raw_3.png,4,4,4,4.0,3.6,4.0,2.57,4,4,4.0,1.44
+85,../Data/Train/OL4-3-DL\slice00580 (2020_05_17 16_28_34 UTC)_mar_raw_3.png,4,4,4,4.0,1.51,4.0,1.66,4,4,4.0,3.79
+86,../Data/Train/OL7-3-DL\slice00650 (2020_05_17 16_28_34 UTC)_mar_raw_4.png,4,4,4,2.0,1.43,2.0,1.07,4,4,2.0,1.16
+87,../Data/Train/OL-7-1-DL\slice00460 (2020_05_17 16_28_34 UTC)_mar_raw_3.png,4,4,4,4.0,2.03,4.0,3.07,4,4,4.0,4.18
+88,../Data/Train/OL-7-1-DL\slice00750 (2020_05_17 16_28_34 UTC)_mar_raw_3.png,4,0,0,4.0,5.11,2.0,5.06,0,0,2.0,1.12
+89,../Data/Train/OL-7-1-DL\slice00930 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,4,4,4,2.0,3.92,4.0,2.78,4,4,2.0,2.07
+90,../Data/Train/OL7-3-DL\slice00960 (2020_05_17 16_28_34 UTC)_mar_raw_1.png,4,4,4,4.0,1.63,4.0,1.14,4,4,4.0,1.37
+91,../Data/Train/OL7-3-DL\slice00370 (2020_05_17 16_28_34 UTC)_mar_raw_1.png,4,2,2,2.0,8.23,4.0,6.07,2,2,4.0,2.75
+92,../Data/Train/OL4-3-DL\slice00470 (2020_05_17 16_28_34 UTC)_mar_raw_4.png,4,4,4,4.0,1.69,4.0,0.92,4,4,4.0,0.88
+93,../Data/Train/OL7-3-DL\slice00420 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,4,4,4,4.0,2.19,4.0,1.35,4,4,2.0,0.93
+94,../Data/Train/OL4-3-DL\slice00710 (2020_05_17 16_28_34 UTC)_mar_raw_1.png,4,4,4,4.0,8.01,4.0,2.72,4,4,4.0,1.97
+95,../Data/Train/OL4-3-DL\slice01090 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,4,4,4,4.0,1.56,4.0,1.58,4,4,0.0,1.97
+96,../Data/Train/OL7-3-DL\slice00370 (2020_05_17 16_28_34 UTC)_mar_raw_4.png,4,4,4,2.0,1.54,4.0,2.18,4,4,4.0,2.71
+97,../Data/Train/OL-7-1-DL\slice00270 (2020_05_17 16_28_34 UTC)_mar_raw_4.png,4,4,4,4.0,3.55,4.0,1.86,4,4,0.0,1.98
+98,../Data/Train/OL-7-1-DL\slice00600 (2020_05_17 16_28_34 UTC)_mar_raw_1.png,4,4,4,2.0,1.19,2.0,2.82,4,4,2.0,2.77
+99,../Data/Train/OL4-3-DL\slice01090 (2020_05_17 16_28_34 UTC)_mar_raw_5.png,4,4,4,4.0,1.9,4.0,2.05,4,4,4.0,1.74

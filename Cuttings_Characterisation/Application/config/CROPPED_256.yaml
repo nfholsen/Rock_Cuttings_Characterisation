@@ -1,0 +1,12 @@
+---
+
+Name : CROPPED_256
+
+CSVPath : 'comparison_data.csv'
+
+TransformTest:
+  CenterCrop :
+    size : 64
+  Resize :
+    width : 256
+    height : 256
