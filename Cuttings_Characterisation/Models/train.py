@@ -42,12 +42,6 @@ def set_seed(seed):
     torch.cuda.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
 
-def set_parameter_requires_grad(model):
-    
-    for _, child in model.named_children():
-        for param in child.parameters():
-            param.requires_grad = True
-
 def resnet(layers=[3, 4, 6, 3],channels=3, num_classes=1000):
     model = ResNet(BasicBlock,layers,channels=channels,num_classes=num_classes)
     return model
@@ -58,7 +52,6 @@ class Classifier(BaseModelSingle):
         super().__init__(net, opt=opt, sched=sched, logger=logger, print_progress=print_progress, device=device, **kwargs)
         
         self.loss_fn = nn.CrossEntropyLoss(reduction="mean")
-
 
     def forward_loss(self, data: Tuple[Tensor]) -> Tensor:
         """  """
@@ -164,6 +157,9 @@ def main():
     # Transforms (other than MinMaxNorm and ToTensor)
     dict_transform = {
         "Padding":Padding,
+        "ToRGB":tf.Grayscale,
+        "ToGrayscale":tf.Grayscale,
+        "ColorJitter":tf.ColorJitter,
         "VerticalFlip":tf.RandomVerticalFlip,
         "HorizontalFlip":tf.RandomHorizontalFlip,
         "Rotation":tf.RandomRotation,

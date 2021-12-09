@@ -1,9 +1,11 @@
 ---
-ModelName : MAR_RESNET34_CROPPED_64_ALL
+ModelName : MAR_RESNET34_CROPPED_256_ALL
 
 PathSave : Models/outputs/
 
 LoadPath : Dataset/train_mar.csv
+
+LoadPathTest : Dataset/test_mar.csv
 
 CheckpointName : checkpoint.pt
 
@@ -31,6 +33,12 @@ Model :
   Channels : 1
 
 TransformTrain:
+  ToRGB :
+    num_output_channels : 3
+  ColorJitter:
+    brightness : 0.5
+  ToGrayscale :
+    num_output_channels : 1
   VerticalFlip: 
     p : 0.5
   HorizontalFlip : 
@@ -40,6 +48,9 @@ TransformTrain:
     max : 90
   CenterCrop :
     size : 64
+  Resize :
+    width : 256
+    height : 256
 
 TransformTest:
   CenterCrop :

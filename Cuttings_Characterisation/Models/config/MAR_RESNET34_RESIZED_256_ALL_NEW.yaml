@@ -1,9 +1,11 @@
 ---
-ModelName : MAR_RESNET34_RESIZED_256_ALL
+ModelName : MAR_RESNET34_RESIZED_256_ALL_NEW
 
 PathSave : Models/outputs/
 
 LoadPath : Dataset/train_mar.csv
+
+LoadPathTest : Dataset/test_mar.csv
 
 CheckpointName : checkpoint.pt
 
@@ -31,6 +33,12 @@ Model :
   Channels : 1
 
 TransformTrain:
+  ToRGB :
+    num_output_channels : 3
+  ColorJitter:
+    brightness : 0.5
+  ToGrayscale :
+    num_output_channels : 1
   VerticalFlip: 
     p : 0.5
   HorizontalFlip : 
