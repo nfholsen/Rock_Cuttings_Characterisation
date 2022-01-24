@@ -5,7 +5,7 @@ PathSave : Models/outputs/
 
 LoadPath : Dataset/train_mar.csv
 
-LoadPathTest : Dataset/test_mar.csv
+LoadPathTest : Dataset/test_lab_mar.csv
 
 CheckpointName : checkpoint.pt
 

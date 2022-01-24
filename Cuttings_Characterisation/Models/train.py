@@ -16,7 +16,7 @@ sys.path.append(os.path.abspath(os.path.join(os.getcwd(), '../..')))
 from Lamp.AttrDict.AttrDict import *
 from Lamp.Model.Dataloader import *
 from Lamp.Model.BaseModel import *
-from Lamp.Model.Resnet import *
+from Lamp.Model.ResNet import *
 
 # TODO's
 # - Prepare config files for all models to train
@@ -124,9 +124,7 @@ def main():
         os.mkdir(path_model)
 
     path_load_data = f"{root_path}/{inputs.LoadPath}" # Path for the .csv file
-    path_checkpoint = f"{path_model}/{inputs.CheckpointName}"
-
-    print(path_checkpoint)
+    path_checkpoint = f"{path_model}/{inputs.CheckpointName}"    
     
     # Seed
     set_seed(seed)

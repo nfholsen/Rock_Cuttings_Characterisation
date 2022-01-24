@@ -1,0 +1,65 @@
+---
+ModelName : MAR_RESNET18_PADDED_256_ALL_NEW
+
+PathSave : Models/outputs/
+
+LoadPath : Dataset/train_mar.csv
+
+LoadPathTestLab : Dataset/test_lab_mar.csv
+
+LoadPathTestBorehole : Dataset/test_borehole_mar.csv
+
+CheckpointName : checkpoint.pt
+
+CheckpointFreq : 5
+
+NSamples : 1000
+
+NEpochs : 200
+
+BatchSize : 32
+
+TrainTestSplit : 0.95
+
+KFold : 5
+
+Seed : 0
+
+Model :
+  Name : ResNet
+  Layers :
+    - 2
+    - 2
+    - 2
+    - 2
+  OutClasses : 5
+  Channels : 1
+
+TransformTrain:
+  ToRGB :
+    num_output_channels : 3
+  ColorJitter:
+    brightness : 0.5
+  ToGrayscale :
+    num_output_channels : 1
+  Padding :
+    out_shape : 256
+  VerticalFlip: 
+    p : 0.5
+  HorizontalFlip : 
+    p : 0.5
+  Rotation : 
+    min : -90
+    max : 90
+
+TransformTest:
+  Padding : 
+    out_shape : 256
+ 
+Optimizer : 
+  lr : 0.001
+  weight_decay : 0.000001
+
+Scheduler :
+  gamma : 0.95
+

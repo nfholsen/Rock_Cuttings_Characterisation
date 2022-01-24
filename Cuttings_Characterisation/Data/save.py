@@ -77,7 +77,11 @@ def main():
     if not os.path.isdir(path_save):
             os.mkdir(path_save)
 
-    for file in list_of_files[200:-200:10]: # TODO : Change with an abstract class from transform
+    inFile = inputs.inFile
+    outFile = inputs.outFile
+    step = inputs.step
+
+    for file in list_of_files[inFile:outFile:step]: # TODO : Change with an abstract class from transform
 
         image_raw = Image_Raw(file,'unchanged')
 

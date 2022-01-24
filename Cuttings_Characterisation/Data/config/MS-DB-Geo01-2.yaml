@@ -6,7 +6,7 @@ folderLoad: Cuttings_data/MS-DB-Geo01-2/
 
 rootSave: C:/Users/nilso/Documents/EPFL/MA4/PDS Turberg/Rock_Cuttings_Characterisation/Cuttings_Characterisation/
 
-folderSave: Data/Train/MS-DB-Geo01-2/
+folderSave: Data/Test_Borehole/MS-DB-Geo01-2/
 
 imgTypes:
   - '/*.tiff'
@@ -14,3 +14,7 @@ imgTypes:
   - '/*.png'
   - '/*.jpg'
   - '/*.jpeg'
+
+inFile : 200
+outFile : -200
+step : 10

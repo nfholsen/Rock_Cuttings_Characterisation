@@ -3,7 +3,10 @@ import torch.nn as nn
 
 class ResNet(nn.Module):
 
-    def __init__(self, block, layers, channels: int = 3, num_classes: int =1000):
+    def __repr__(self) -> str:
+        return super().__repr__()
+
+    def __init__(self, block, layers, channels: int=3, num_classes: int=1000):
         super().__init__()
         
         self.inplanes = 64

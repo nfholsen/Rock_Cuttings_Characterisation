@@ -1,0 +1,20 @@
+---
+
+rootLoad: E:/FileHistory/nilso/LAPTOP-154DU0LI/Data/C/Users/nilso/Documents/EPFL/MA4/PDS Turberg/
+
+folderLoad: Cuttings_data/BL-DB-2/SlicesY/
+
+rootSave: C:/Users/nilso/Documents/EPFL/MA4/PDS Turberg/Rock_Cuttings_Characterisation/Cuttings_Characterisation/
+
+folderSave: Data/Test_Borehole/BL-DB-2/
+
+imgTypes:
+  - '/*.tiff'
+  - '/*.tif'
+  - '/*.png'
+  - '/*.jpg'
+  - '/*.jpeg'
+
+inFile : 200
+outFile : -200
+step : 10

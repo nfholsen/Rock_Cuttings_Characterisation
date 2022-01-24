@@ -61,17 +61,19 @@ class Image_Raw:
         fig, ax = plt.subplots(figsize=(10,10))
         ax.imshow(self.img, cmap='gray')
         plt.axis('off')
-        plt.show()
         if save_path:
             plt.savefig(save_path,bbox_inches='tight')
+        plt.show()
 
-    def plot_new(self):
+    def plot_new(self,save_path=None):
         fig, ax = plt.subplots(figsize=(10,10))
         ax.imshow(self.new, cmap='gray')
         plt.axis('off')
+        if save_path:
+            plt.savefig(save_path,bbox_inches='tight')
         plt.show()
 
-    def plot_labels(self):
+    def plot_labels(self,save_path=None):
 
         try :
             self.labels
@@ -81,6 +83,8 @@ class Image_Raw:
         fig, ax = plt.subplots(figsize=(10,10))
         ax.imshow(self.labels, cmap='gray')
         plt.axis('off')
+        if save_path:
+            plt.savefig(save_path,bbox_inches='tight')
         plt.show()
 
     def plot_histogram(self):

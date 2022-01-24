@@ -7,5 +7,8 @@
     ],
     "MAR_RESNET34_PADDED_256_ALL_NEW": [
         0.7275273745861981
+    ],
+    "MAR_RESNET18_PADDED_256_ALL_NEW": [
+        0.5780494015788133
     ]
 }

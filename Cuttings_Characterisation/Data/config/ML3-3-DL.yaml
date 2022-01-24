@@ -14,3 +14,7 @@ imgTypes:
   - '/*.png'
   - '/*.jpg'
   - '/*.jpeg'
+
+inFile : 200
+outFile : -200
+step : 10

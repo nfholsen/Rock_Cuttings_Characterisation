@@ -16,7 +16,7 @@ sys.path.append(os.path.abspath(os.path.join(os.getcwd(), '../..')))
 from Lamp.AttrDict.AttrDict import *
 from Lamp.Model.Dataloader import *
 from Lamp.Model.BaseModel import *
-from Lamp.Model.Resnet import *
+from Lamp.Model.ResNet import *
 
 def set_seed(seed):
     """ Set the random seed """
@@ -94,7 +94,7 @@ def main():
     # Handle file paths
     root_path = os.path.abspath(os.path.join(os.getcwd(), '..')) # Workspace path to Cuttings_Characterisation 
     path_model = f"{root_path}/{inputs.PathSave}/{inputs.ModelName}"
-    path_load_data = f"{root_path}/{inputs.LoadPathTest}" # Path for the .csv file
+    path_load_data = f"{root_path}/{inputs.LoadPathTestLab}" # Path for the .csv file
 
     # Seed
     set_seed(seed)

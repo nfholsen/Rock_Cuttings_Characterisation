@@ -15,7 +15,7 @@ sys.path.append(os.path.abspath(os.path.join(os.getcwd(), '../..')))
 from Lamp.AttrDict.AttrDict import *
 from Lamp.Model.Dataloader import *
 from Lamp.Model.BaseModel import *
-from Lamp.Model.Resnet import *
+from Lamp.Model.ResNet import *
 
 def load_config(cfg_path):
     """  """
