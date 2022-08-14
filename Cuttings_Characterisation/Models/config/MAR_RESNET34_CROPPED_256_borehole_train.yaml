@@ -1,0 +1,66 @@
+---
+ModelName : MAR_RESNET34_CROPPED_256_borehole_train
+
+PathSave : Models/outputs/
+
+CheckpointName : checkpoint.pt
+
+Train : 
+  - borehole/train_mar_0.csv
+  - borehole/train_mar_1.csv
+  - borehole/train_mar_2.csv
+Test :
+  - borehole/test_mar_0.csv
+  - borehole/test_mar_1.csv
+  - borehole/test_mar_2.csv 
+
+CheckpointFreq : 5
+
+NEpochs : 100
+
+BatchSize : 8
+
+Seed : 0
+
+Model :
+  Layers :
+    - 3
+    - 4
+    - 6
+    - 3
+  OutClasses : 5
+  Channels : 1
+
+TransformTrain:
+  ToRGB :
+    num_output_channels : 3
+  ColorJitter:
+    brightness : 0.5
+  ToGrayscale :
+    num_output_channels : 1
+  VerticalFlip: 
+    p : 0.5
+  HorizontalFlip : 
+    p : 0.5
+  Rotation : 
+    min : -90
+    max : 90
+  CenterCrop :
+    size : 64
+  Resize :
+    width : 256
+    height : 256
+
+TransformTest:
+  CenterCrop :
+    size : 64
+  Resize :
+    width : 256
+    height : 256
+ 
+Optimizer : 
+  lr : 0.001
+  weight_decay : 0.000001
+
+Scheduler :
+  gamma : 0.95

@@ -1,0 +1,35 @@
+---
+
+rootData: C:/Users/nilso/Documents/EPFL/MA4/PDS Turberg/Rock_Cuttings_Characterisation/Cuttings_Characterisation/Data/Test_Borehole/
+
+Train:
+  BL:
+    Folder:
+      - 'BL-DB-1/'
+      - 'BL-DB-2/'
+      - 'BL-DB-3/'
+    Label: 0
+  GN:
+    Folder:
+      - 'GN-DB-1/'
+      - 'GN-DB-2/'
+      - 'GN-DB-3/'
+    Label: 1
+  ML:
+    Folder:
+      - 'ML-DB-Geo1/'
+      - 'ML-DB-Geo2/'
+      - 'ML-DB-Geo3/'
+    Label: 2
+  MS:
+    Folder:
+      - 'MS-DB-Geo01-1/'
+      - 'MS-DB-Geo01-2/'
+      - 'MS-DB-Geo01-3/'
+    Label: 3
+  OL:
+    Folder:
+      - 'OL-DB-1/'
+      - 'OL-DB-2/'
+      - 'OL-DB-3/'
+    Label: 4

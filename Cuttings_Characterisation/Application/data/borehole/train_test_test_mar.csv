@@ -1,0 +1,101 @@
+,Paths,Folders,Label,Paths_Test,Preds
+0,../Data/Test_Borehole/BL-DB-3\slice00240_mar_raw_3.png,BL-DB-3/,0,assets/Data_Test_Borehole_BL-DB-3_slice00240_mar_raw_3.png,-1
+1,../Data/Test_Borehole/BL-DB-3\slice00390_mar_raw_5.png,BL-DB-3/,0,assets/Data_Test_Borehole_BL-DB-3_slice00390_mar_raw_5.png,-1
+2,../Data/Test_Borehole/BL-DB-3\slice00490_mar_raw_3.png,BL-DB-3/,0,assets/Data_Test_Borehole_BL-DB-3_slice00490_mar_raw_3.png,-1
+3,../Data/Test_Borehole/BL-DB-3\slice00570_mar_raw_5.png,BL-DB-3/,0,assets/Data_Test_Borehole_BL-DB-3_slice00570_mar_raw_5.png,-1
+4,../Data/Test_Borehole/BL-DB-3\slice00490_mar_raw_5.png,BL-DB-3/,0,assets/Data_Test_Borehole_BL-DB-3_slice00490_mar_raw_5.png,-1
+5,../Data/Test_Borehole/BL-DB-3\slice00450_mar_raw_9.png,BL-DB-3/,0,assets/Data_Test_Borehole_BL-DB-3_slice00450_mar_raw_9.png,-1
+6,../Data/Test_Borehole/BL-DB-3\slice00560_mar_raw_9.png,BL-DB-3/,0,assets/Data_Test_Borehole_BL-DB-3_slice00560_mar_raw_9.png,-1
+7,../Data/Test_Borehole/BL-DB-3\slice00660_mar_raw_3.png,BL-DB-3/,0,assets/Data_Test_Borehole_BL-DB-3_slice00660_mar_raw_3.png,-1
+8,../Data/Test_Borehole/BL-DB-3\slice00320_mar_raw_5.png,BL-DB-3/,0,assets/Data_Test_Borehole_BL-DB-3_slice00320_mar_raw_5.png,-1
+9,../Data/Test_Borehole/BL-DB-3\slice00460_mar_raw_5.png,BL-DB-3/,0,assets/Data_Test_Borehole_BL-DB-3_slice00460_mar_raw_5.png,-1
+10,../Data/Test_Borehole/BL-DB-3\slice00400_mar_raw_2.png,BL-DB-3/,0,assets/Data_Test_Borehole_BL-DB-3_slice00400_mar_raw_2.png,-1
+11,../Data/Test_Borehole/BL-DB-3\slice00630_mar_raw_6.png,BL-DB-3/,0,assets/Data_Test_Borehole_BL-DB-3_slice00630_mar_raw_6.png,-1
+12,../Data/Test_Borehole/BL-DB-3\slice00690_mar_raw_2.png,BL-DB-3/,0,assets/Data_Test_Borehole_BL-DB-3_slice00690_mar_raw_2.png,-1
+13,../Data/Test_Borehole/BL-DB-3\slice00620_mar_raw_4.png,BL-DB-3/,0,assets/Data_Test_Borehole_BL-DB-3_slice00620_mar_raw_4.png,-1
+14,../Data/Test_Borehole/BL-DB-3\slice00400_mar_raw_2.png,BL-DB-3/,0,assets/Data_Test_Borehole_BL-DB-3_slice00400_mar_raw_2.png,-1
+15,../Data/Test_Borehole/BL-DB-3\slice00490_mar_raw_1.png,BL-DB-3/,0,assets/Data_Test_Borehole_BL-DB-3_slice00490_mar_raw_1.png,-1
+16,../Data/Test_Borehole/BL-DB-3\slice00250_mar_raw_2.png,BL-DB-3/,0,assets/Data_Test_Borehole_BL-DB-3_slice00250_mar_raw_2.png,-1
+17,../Data/Test_Borehole/BL-DB-3\slice00240_mar_raw_1.png,BL-DB-3/,0,assets/Data_Test_Borehole_BL-DB-3_slice00240_mar_raw_1.png,-1
+18,../Data/Test_Borehole/BL-DB-3\slice00740_mar_raw_2.png,BL-DB-3/,0,assets/Data_Test_Borehole_BL-DB-3_slice00740_mar_raw_2.png,-1
+19,../Data/Test_Borehole/BL-DB-3\slice00440_mar_raw_2.png,BL-DB-3/,0,assets/Data_Test_Borehole_BL-DB-3_slice00440_mar_raw_2.png,-1
+20,../Data/Test_Borehole/GN-DB-3\slice00630_mar_raw_5.png,GN-DB-3/,1,assets/Data_Test_Borehole_GN-DB-3_slice00630_mar_raw_5.png,-1
+21,../Data/Test_Borehole/GN-DB-3\slice00650_mar_raw_5.png,GN-DB-3/,1,assets/Data_Test_Borehole_GN-DB-3_slice00650_mar_raw_5.png,-1
+22,../Data/Test_Borehole/GN-DB-3\slice00380_mar_raw_2.png,GN-DB-3/,1,assets/Data_Test_Borehole_GN-DB-3_slice00380_mar_raw_2.png,-1
+23,../Data/Test_Borehole/GN-DB-3\slice00720_mar_raw_6.png,GN-DB-3/,1,assets/Data_Test_Borehole_GN-DB-3_slice00720_mar_raw_6.png,-1
+24,../Data/Test_Borehole/GN-DB-3\slice00260_mar_raw_2.png,GN-DB-3/,1,assets/Data_Test_Borehole_GN-DB-3_slice00260_mar_raw_2.png,-1
+25,../Data/Test_Borehole/GN-DB-3\slice00690_mar_raw_1.png,GN-DB-3/,1,assets/Data_Test_Borehole_GN-DB-3_slice00690_mar_raw_1.png,-1
+26,../Data/Test_Borehole/GN-DB-3\slice00350_mar_raw_1.png,GN-DB-3/,1,assets/Data_Test_Borehole_GN-DB-3_slice00350_mar_raw_1.png,-1
+27,../Data/Test_Borehole/GN-DB-3\slice00580_mar_raw_5.png,GN-DB-3/,1,assets/Data_Test_Borehole_GN-DB-3_slice00580_mar_raw_5.png,-1
+28,../Data/Test_Borehole/GN-DB-3\slice00200_mar_raw_3.png,GN-DB-3/,1,assets/Data_Test_Borehole_GN-DB-3_slice00200_mar_raw_3.png,-1
+29,../Data/Test_Borehole/GN-DB-3\slice00840_mar_raw_3.png,GN-DB-3/,1,assets/Data_Test_Borehole_GN-DB-3_slice00840_mar_raw_3.png,-1
+30,../Data/Test_Borehole/GN-DB-3\slice00770_mar_raw_3.png,GN-DB-3/,1,assets/Data_Test_Borehole_GN-DB-3_slice00770_mar_raw_3.png,-1
+31,../Data/Test_Borehole/GN-DB-3\slice00470_mar_raw_3.png,GN-DB-3/,1,assets/Data_Test_Borehole_GN-DB-3_slice00470_mar_raw_3.png,-1
+32,../Data/Test_Borehole/GN-DB-3\slice00630_mar_raw_2.png,GN-DB-3/,1,assets/Data_Test_Borehole_GN-DB-3_slice00630_mar_raw_2.png,-1
+33,../Data/Test_Borehole/GN-DB-3\slice00510_mar_raw_2.png,GN-DB-3/,1,assets/Data_Test_Borehole_GN-DB-3_slice00510_mar_raw_2.png,-1
+34,../Data/Test_Borehole/GN-DB-3\slice00460_mar_raw_3.png,GN-DB-3/,1,assets/Data_Test_Borehole_GN-DB-3_slice00460_mar_raw_3.png,-1
+35,../Data/Test_Borehole/GN-DB-3\slice00470_mar_raw_4.png,GN-DB-3/,1,assets/Data_Test_Borehole_GN-DB-3_slice00470_mar_raw_4.png,-1
+36,../Data/Test_Borehole/GN-DB-3\slice00740_mar_raw_2.png,GN-DB-3/,1,assets/Data_Test_Borehole_GN-DB-3_slice00740_mar_raw_2.png,-1
+37,../Data/Test_Borehole/GN-DB-3\slice00350_mar_raw_2.png,GN-DB-3/,1,assets/Data_Test_Borehole_GN-DB-3_slice00350_mar_raw_2.png,-1
+38,../Data/Test_Borehole/GN-DB-3\slice00820_mar_raw_3.png,GN-DB-3/,1,assets/Data_Test_Borehole_GN-DB-3_slice00820_mar_raw_3.png,-1
+39,../Data/Test_Borehole/GN-DB-3\slice00710_mar_raw_2.png,GN-DB-3/,1,assets/Data_Test_Borehole_GN-DB-3_slice00710_mar_raw_2.png,-1
+40,../Data/Test_Borehole/ML-DB-Geo3\slice00399 (2020_03_12 20_42_36 UTC)_mar_raw_1.png,ML-DB-Geo3/,2,assets/Data_Test_Borehole_ML-DB-Geo3_slice00399 (2020_03_12 20_42_36 UTC)_mar_raw_1.png,-1
+41,../Data/Test_Borehole/ML-DB-Geo3\slice00445 (2020_03_12 20_42_36 UTC)_mar_raw_7.png,ML-DB-Geo3/,2,assets/Data_Test_Borehole_ML-DB-Geo3_slice00445 (2020_03_12 20_42_36 UTC)_mar_raw_7.png,-1
+42,../Data/Test_Borehole/ML-DB-Geo3\slice00409 (2020_03_12 20_42_36 UTC)_mar_raw_8.png,ML-DB-Geo3/,2,assets/Data_Test_Borehole_ML-DB-Geo3_slice00409 (2020_03_12 20_42_36 UTC)_mar_raw_8.png,-1
+43,../Data/Test_Borehole/ML-DB-Geo3\slice00439 (2020_10_28 07_52_30 UTC)_mar_raw_9.png,ML-DB-Geo3/,2,assets/Data_Test_Borehole_ML-DB-Geo3_slice00439 (2020_10_28 07_52_30 UTC)_mar_raw_9.png,-1
+44,../Data/Test_Borehole/ML-DB-Geo3\slice00409 (2020_03_12 20_42_36 UTC)_mar_raw_9.png,ML-DB-Geo3/,2,assets/Data_Test_Borehole_ML-DB-Geo3_slice00409 (2020_03_12 20_42_36 UTC)_mar_raw_9.png,-1
+45,../Data/Test_Borehole/ML-DB-Geo3\slice00429 (2020_10_28 07_52_30 UTC)_mar_raw_6.png,ML-DB-Geo3/,2,assets/Data_Test_Borehole_ML-DB-Geo3_slice00429 (2020_10_28 07_52_30 UTC)_mar_raw_6.png,-1
+46,../Data/Test_Borehole/ML-DB-Geo3\slice00465 (2020_03_12 20_42_36 UTC)_mar_raw_4.png,ML-DB-Geo3/,2,assets/Data_Test_Borehole_ML-DB-Geo3_slice00465 (2020_03_12 20_42_36 UTC)_mar_raw_4.png,-1
+47,../Data/Test_Borehole/ML-DB-Geo3\slice00455 (2020_03_12 20_42_36 UTC)_mar_raw_2.png,ML-DB-Geo3/,2,assets/Data_Test_Borehole_ML-DB-Geo3_slice00455 (2020_03_12 20_42_36 UTC)_mar_raw_2.png,-1
+48,../Data/Test_Borehole/ML-DB-Geo3\slice00339 (2020_03_12 20_42_36 UTC)_mar_raw_2.png,ML-DB-Geo3/,2,assets/Data_Test_Borehole_ML-DB-Geo3_slice00339 (2020_03_12 20_42_36 UTC)_mar_raw_2.png,-1
+49,../Data/Test_Borehole/ML-DB-Geo3\slice00434 (2020_10_28 07_52_30 UTC)_mar_raw_3.png,ML-DB-Geo3/,2,assets/Data_Test_Borehole_ML-DB-Geo3_slice00434 (2020_10_28 07_52_30 UTC)_mar_raw_3.png,-1
+50,../Data/Test_Borehole/ML-DB-Geo3\slice00389 (2020_03_12 20_42_36 UTC)_mar_raw_2.png,ML-DB-Geo3/,2,assets/Data_Test_Borehole_ML-DB-Geo3_slice00389 (2020_03_12 20_42_36 UTC)_mar_raw_2.png,-1
+51,../Data/Test_Borehole/ML-DB-Geo3\slice00399 (2020_03_12 20_42_36 UTC)_mar_raw_12.png,ML-DB-Geo3/,2,assets/Data_Test_Borehole_ML-DB-Geo3_slice00399 (2020_03_12 20_42_36 UTC)_mar_raw_12.png,-1
+52,../Data/Test_Borehole/ML-DB-Geo3\slice00359 (2020_03_12 20_42_36 UTC)_mar_raw_8.png,ML-DB-Geo3/,2,assets/Data_Test_Borehole_ML-DB-Geo3_slice00359 (2020_03_12 20_42_36 UTC)_mar_raw_8.png,-1
+53,../Data/Test_Borehole/ML-DB-Geo3\slice00419 (2020_10_28 07_52_30 UTC)_mar_raw_7.png,ML-DB-Geo3/,2,assets/Data_Test_Borehole_ML-DB-Geo3_slice00419 (2020_10_28 07_52_30 UTC)_mar_raw_7.png,-1
+54,../Data/Test_Borehole/ML-DB-Geo3\slice00279 (2020_03_12 20_42_36 UTC)_mar_raw_1.png,ML-DB-Geo3/,2,assets/Data_Test_Borehole_ML-DB-Geo3_slice00279 (2020_03_12 20_42_36 UTC)_mar_raw_1.png,-1
+55,../Data/Test_Borehole/ML-DB-Geo3\slice00419 (2020_10_28 07_52_30 UTC)_mar_raw_6.png,ML-DB-Geo3/,2,assets/Data_Test_Borehole_ML-DB-Geo3_slice00419 (2020_10_28 07_52_30 UTC)_mar_raw_6.png,-1
+56,../Data/Test_Borehole/ML-DB-Geo3\slice00445 (2020_03_12 20_42_36 UTC)_mar_raw_3.png,ML-DB-Geo3/,2,assets/Data_Test_Borehole_ML-DB-Geo3_slice00445 (2020_03_12 20_42_36 UTC)_mar_raw_3.png,-1
+57,../Data/Test_Borehole/ML-DB-Geo3\slice00465 (2020_03_12 20_42_36 UTC)_mar_raw_7.png,ML-DB-Geo3/,2,assets/Data_Test_Borehole_ML-DB-Geo3_slice00465 (2020_03_12 20_42_36 UTC)_mar_raw_7.png,-1
+58,../Data/Test_Borehole/ML-DB-Geo3\slice00439 (2020_10_28 07_52_30 UTC)_mar_raw_12.png,ML-DB-Geo3/,2,assets/Data_Test_Borehole_ML-DB-Geo3_slice00439 (2020_10_28 07_52_30 UTC)_mar_raw_12.png,-1
+59,../Data/Test_Borehole/ML-DB-Geo3\slice00465 (2020_03_12 20_42_36 UTC)_mar_raw_5.png,ML-DB-Geo3/,2,assets/Data_Test_Borehole_ML-DB-Geo3_slice00465 (2020_03_12 20_42_36 UTC)_mar_raw_5.png,-1
+60,../Data/Test_Borehole/MS-DB-Geo01-3\slice00477 (2020_03_12 20_42_36 UTC)_mar_raw_8.png,MS-DB-Geo01-3/,3,assets/Data_Test_Borehole_MS-DB-Geo01-3_slice00477 (2020_03_12 20_42_36 UTC)_mar_raw_8.png,-1
+61,../Data/Test_Borehole/MS-DB-Geo01-3\slice00487 (2020_03_12 20_42_36 UTC)_mar_raw_9.png,MS-DB-Geo01-3/,3,assets/Data_Test_Borehole_MS-DB-Geo01-3_slice00487 (2020_03_12 20_42_36 UTC)_mar_raw_9.png,-1
+62,../Data/Test_Borehole/MS-DB-Geo01-3\slice00271 (2020_03_12 20_42_36 UTC)_mar_raw_10.png,MS-DB-Geo01-3/,3,assets/Data_Test_Borehole_MS-DB-Geo01-3_slice00271 (2020_03_12 20_42_36 UTC)_mar_raw_10.png,-1
+63,../Data/Test_Borehole/MS-DB-Geo01-3\slice00251 (2020_03_12 20_42_36 UTC)_mar_raw_1.png,MS-DB-Geo01-3/,3,assets/Data_Test_Borehole_MS-DB-Geo01-3_slice00251 (2020_03_12 20_42_36 UTC)_mar_raw_1.png,-1
+64,../Data/Test_Borehole/MS-DB-Geo01-3\slice00438 (2020_10_28 07_52_30 UTC)_mar_raw_7.png,MS-DB-Geo01-3/,3,assets/Data_Test_Borehole_MS-DB-Geo01-3_slice00438 (2020_10_28 07_52_30 UTC)_mar_raw_7.png,-1
+65,../Data/Test_Borehole/MS-DB-Geo01-3\slice00381 (2020_03_12 20_42_36 UTC)_mar_raw_4.png,MS-DB-Geo01-3/,3,assets/Data_Test_Borehole_MS-DB-Geo01-3_slice00381 (2020_03_12 20_42_36 UTC)_mar_raw_4.png,-1
+66,../Data/Test_Borehole/MS-DB-Geo01-3\slice00341 (2020_03_12 20_42_36 UTC)_mar_raw_1.png,MS-DB-Geo01-3/,3,assets/Data_Test_Borehole_MS-DB-Geo01-3_slice00341 (2020_03_12 20_42_36 UTC)_mar_raw_1.png,-1
+67,../Data/Test_Borehole/MS-DB-Geo01-3\slice00448 (2020_10_28 07_52_30 UTC)_mar_raw_10.png,MS-DB-Geo01-3/,3,assets/Data_Test_Borehole_MS-DB-Geo01-3_slice00448 (2020_10_28 07_52_30 UTC)_mar_raw_10.png,-1
+68,../Data/Test_Borehole/MS-DB-Geo01-3\slice00210 (2020_03_12 20_42_36 UTC)_mar_raw_9.png,MS-DB-Geo01-3/,3,assets/Data_Test_Borehole_MS-DB-Geo01-3_slice00210 (2020_03_12 20_42_36 UTC)_mar_raw_9.png,-1
+69,../Data/Test_Borehole/MS-DB-Geo01-3\slice00477 (2020_03_12 20_42_36 UTC)_mar_raw_3.png,MS-DB-Geo01-3/,3,assets/Data_Test_Borehole_MS-DB-Geo01-3_slice00477 (2020_03_12 20_42_36 UTC)_mar_raw_3.png,-1
+70,../Data/Test_Borehole/MS-DB-Geo01-3\slice00271 (2020_03_12 20_42_36 UTC)_mar_raw_7.png,MS-DB-Geo01-3/,3,assets/Data_Test_Borehole_MS-DB-Geo01-3_slice00271 (2020_03_12 20_42_36 UTC)_mar_raw_7.png,-1
+71,../Data/Test_Borehole/MS-DB-Geo01-3\slice00453 (2020_10_28 07_52_30 UTC)_mar_raw_5.png,MS-DB-Geo01-3/,3,assets/Data_Test_Borehole_MS-DB-Geo01-3_slice00453 (2020_10_28 07_52_30 UTC)_mar_raw_5.png,-1
+72,../Data/Test_Borehole/MS-DB-Geo01-3\slice00261 (2020_03_12 20_42_36 UTC)_mar_raw_6.png,MS-DB-Geo01-3/,3,assets/Data_Test_Borehole_MS-DB-Geo01-3_slice00261 (2020_03_12 20_42_36 UTC)_mar_raw_6.png,-1
+73,../Data/Test_Borehole/MS-DB-Geo01-3\slice00301 (2020_03_12 20_42_36 UTC)_mar_raw_5.png,MS-DB-Geo01-3/,3,assets/Data_Test_Borehole_MS-DB-Geo01-3_slice00301 (2020_03_12 20_42_36 UTC)_mar_raw_5.png,-1
+74,../Data/Test_Borehole/MS-DB-Geo01-3\slice00311 (2020_03_12 20_42_36 UTC)_mar_raw_7.png,MS-DB-Geo01-3/,3,assets/Data_Test_Borehole_MS-DB-Geo01-3_slice00311 (2020_03_12 20_42_36 UTC)_mar_raw_7.png,-1
+75,../Data/Test_Borehole/MS-DB-Geo01-3\slice00497 (2020_03_12 20_42_36 UTC)_mar_raw_9.png,MS-DB-Geo01-3/,3,assets/Data_Test_Borehole_MS-DB-Geo01-3_slice00497 (2020_03_12 20_42_36 UTC)_mar_raw_9.png,-1
+76,../Data/Test_Borehole/MS-DB-Geo01-3\slice00401 (2020_03_12 20_42_36 UTC)_mar_raw_12.png,MS-DB-Geo01-3/,3,assets/Data_Test_Borehole_MS-DB-Geo01-3_slice00401 (2020_03_12 20_42_36 UTC)_mar_raw_12.png,-1
+77,../Data/Test_Borehole/MS-DB-Geo01-3\slice00301 (2020_03_12 20_42_36 UTC)_mar_raw_5.png,MS-DB-Geo01-3/,3,assets/Data_Test_Borehole_MS-DB-Geo01-3_slice00301 (2020_03_12 20_42_36 UTC)_mar_raw_5.png,-1
+78,../Data/Test_Borehole/MS-DB-Geo01-3\slice00468 (2020_10_28 07_52_30 UTC)_mar_raw_4.png,MS-DB-Geo01-3/,3,assets/Data_Test_Borehole_MS-DB-Geo01-3_slice00468 (2020_10_28 07_52_30 UTC)_mar_raw_4.png,-1
+79,../Data/Test_Borehole/MS-DB-Geo01-3\slice00210 (2020_03_12 20_42_36 UTC)_mar_raw_3.png,MS-DB-Geo01-3/,3,assets/Data_Test_Borehole_MS-DB-Geo01-3_slice00210 (2020_03_12 20_42_36 UTC)_mar_raw_3.png,-1
+80,../Data/Test_Borehole/OL-DB-3\slice00410_mar_raw_3.png,OL-DB-3/,4,assets/Data_Test_Borehole_OL-DB-3_slice00410_mar_raw_3.png,-1
+81,../Data/Test_Borehole/OL-DB-3\slice00710_mar_raw_3.png,OL-DB-3/,4,assets/Data_Test_Borehole_OL-DB-3_slice00710_mar_raw_3.png,-1
+82,../Data/Test_Borehole/OL-DB-3\slice00630_mar_raw_1.png,OL-DB-3/,4,assets/Data_Test_Borehole_OL-DB-3_slice00630_mar_raw_1.png,-1
+83,../Data/Test_Borehole/OL-DB-3\slice00480_mar_raw_9.png,OL-DB-3/,4,assets/Data_Test_Borehole_OL-DB-3_slice00480_mar_raw_9.png,-1
+84,../Data/Test_Borehole/OL-DB-3\slice00360_mar_raw_3.png,OL-DB-3/,4,assets/Data_Test_Borehole_OL-DB-3_slice00360_mar_raw_3.png,-1
+85,../Data/Test_Borehole/OL-DB-3\slice00230_mar_raw_2.png,OL-DB-3/,4,assets/Data_Test_Borehole_OL-DB-3_slice00230_mar_raw_2.png,-1
+86,../Data/Test_Borehole/OL-DB-3\slice00330_mar_raw_5.png,OL-DB-3/,4,assets/Data_Test_Borehole_OL-DB-3_slice00330_mar_raw_5.png,-1
+87,../Data/Test_Borehole/OL-DB-3\slice00320_mar_raw_9.png,OL-DB-3/,4,assets/Data_Test_Borehole_OL-DB-3_slice00320_mar_raw_9.png,-1
+88,../Data/Test_Borehole/OL-DB-3\slice00420_mar_raw_1.png,OL-DB-3/,4,assets/Data_Test_Borehole_OL-DB-3_slice00420_mar_raw_1.png,-1
+89,../Data/Test_Borehole/OL-DB-3\slice00360_mar_raw_10.png,OL-DB-3/,4,assets/Data_Test_Borehole_OL-DB-3_slice00360_mar_raw_10.png,-1
+90,../Data/Test_Borehole/OL-DB-3\slice00650_mar_raw_1.png,OL-DB-3/,4,assets/Data_Test_Borehole_OL-DB-3_slice00650_mar_raw_1.png,-1
+91,../Data/Test_Borehole/OL-DB-3\slice00700_mar_raw_4.png,OL-DB-3/,4,assets/Data_Test_Borehole_OL-DB-3_slice00700_mar_raw_4.png,-1
+92,../Data/Test_Borehole/OL-DB-3\slice00570_mar_raw_2.png,OL-DB-3/,4,assets/Data_Test_Borehole_OL-DB-3_slice00570_mar_raw_2.png,-1
+93,../Data/Test_Borehole/OL-DB-3\slice00500_mar_raw_5.png,OL-DB-3/,4,assets/Data_Test_Borehole_OL-DB-3_slice00500_mar_raw_5.png,-1
+94,../Data/Test_Borehole/OL-DB-3\slice00360_mar_raw_5.png,OL-DB-3/,4,assets/Data_Test_Borehole_OL-DB-3_slice00360_mar_raw_5.png,-1
+95,../Data/Test_Borehole/OL-DB-3\slice00630_mar_raw_2.png,OL-DB-3/,4,assets/Data_Test_Borehole_OL-DB-3_slice00630_mar_raw_2.png,-1
+96,../Data/Test_Borehole/OL-DB-3\slice00350_mar_raw_10.png,OL-DB-3/,4,assets/Data_Test_Borehole_OL-DB-3_slice00350_mar_raw_10.png,-1
+97,../Data/Test_Borehole/OL-DB-3\slice00840_mar_raw_4.png,OL-DB-3/,4,assets/Data_Test_Borehole_OL-DB-3_slice00840_mar_raw_4.png,-1
+98,../Data/Test_Borehole/OL-DB-3\slice00850_mar_raw_3.png,OL-DB-3/,4,assets/Data_Test_Borehole_OL-DB-3_slice00850_mar_raw_3.png,-1
+99,../Data/Test_Borehole/OL-DB-3\slice00660_mar_raw_5.png,OL-DB-3/,4,assets/Data_Test_Borehole_OL-DB-3_slice00660_mar_raw_5.png,-1

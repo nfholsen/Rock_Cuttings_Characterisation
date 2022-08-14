@@ -109,9 +109,7 @@ def main():
     # Handle config_file inputs
     n_epochs = int(inputs.NEpochs)
     batch_size = int(inputs.BatchSize)
-    k = int(inputs.KFold)
     seed = int(inputs.Seed)
-    n_samples = int(inputs.NSamples)
     layers = inputs.Model.Layers # [3, 4, 6, 3] for ResNet34 and [2, 2, 2, 2] for ResNet18
     classes = inputs.Model.OutClasses
     channels = inputs.Model.Channels
@@ -123,7 +121,6 @@ def main():
     if os.path.isdir(path_model) is False: # Create new folder for the model
         os.mkdir(path_model)
 
-    path_load_data = f"{root_path}/{inputs.LoadPath}" # Path for the .csv file
     path_checkpoint = f"{path_model}/{inputs.CheckpointName}"    
     
     # Seed
@@ -133,24 +130,6 @@ def main():
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     print(device)
     print(torch.cuda.get_device_name(device))
-
-    # Read dataset
-    dataframe = pd.read_csv(path_load_data,index_col=0)
-    
-    # Train Test Split
-    train_dataframe, _ = train_test_split(dataframe, test_size=(1 - inputs.TrainTestSplit),stratify=dataframe['Label'], random_state=inputs.Seed)
-
-    # Reset Index
-    train_dataframe = train_dataframe.reset_index(drop=True)
-
-    # Samples
-    train_dataframe = train_dataframe.groupby('Label').sample(n_samples,replace=True,random_state=inputs.Seed).reset_index(drop=True)
-    
-    X = train_dataframe.iloc[:,:-1]
-    y = train_dataframe.iloc[:,-1]
-
-    # Stratified KFold
-    kf = StratifiedKFold(n_splits=k, random_state=seed, shuffle=True)
 
     # Transforms (other than MinMaxNorm and ToTensor)
     dict_transform = {
@@ -165,6 +144,7 @@ def main():
         "Resize":tf.Resize,
     }
 
+    # Transforms Train and Test
     transforms_train = Transforms(
         [dict_transform[key]([k for k in item.values()] if len(item.values()) > 1 else [k for k in item.values()][0]) for key, item in inputs.TransformTrain.items()] 
         )
@@ -173,18 +153,23 @@ def main():
         [dict_transform[key]([k for k in item.values()] if len(item.values()) > 1 else [k for k in item.values()][0]) for key, item in inputs.TransformTest.items()] 
         )
 
-    for i_, (train_index, test_index) in enumerate(kf.split(X,y)):
+    for i_, (train_path, test_path) in enumerate(zip(inputs.Train, inputs.Test)):
 
         model_name = f"model_{i_}.pt"
+        log_name = f"model_logs_{i_}.json"
         save_model_path = f"{path_model}/{model_name}"
+        save_log_path = f"{path_model}/{log_name}"
+
+        train_dataframe = pd.read_csv(f'../Dataset/{train_path}',index_col=0)
+        test_dataframe = pd.read_csv(f'../Dataset/{test_path}',index_col=0)
 
         if not os.path.isfile(save_model_path):
             trainDataset = Dataset(
-                train_dataframe.loc[train_index,:].reset_index(drop=True),
+                train_dataframe,
                 transforms=transforms_train.get_transforms()
                 )
             testDataset = Dataset(
-                train_dataframe.loc[test_index,:].reset_index(drop=True),
+                test_dataframe,
                 transforms=transforms_test.get_transforms()
                 )
 
@@ -229,6 +214,7 @@ def main():
 
             # Save model weights etc. 
             classifier.save(save_model_path)
+            classifier.save_outputs(save_log_path)
 
             # End of training remove checkpoint file
             if os.path.isfile(path_checkpoint): # Remove checkpoint file at the end of the training
