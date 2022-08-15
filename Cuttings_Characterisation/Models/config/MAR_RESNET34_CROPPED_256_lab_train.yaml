@@ -46,14 +46,14 @@ TransformTrain:
     min : -90
     max : 90
   CenterCrop :
-    size : 64
+    size : 128
   Resize :
     width : 256
     height : 256
 
 TransformTest:
   CenterCrop :
-    size : 64
+    size : 128
   Resize :
     width : 256
     height : 256
