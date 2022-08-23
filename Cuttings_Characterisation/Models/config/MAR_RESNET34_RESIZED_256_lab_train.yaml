@@ -20,7 +20,7 @@ NSamples : 1000
 
 NEpochs : 200
 
-BatchSize : 8
+BatchSize : 32
 
 Seed : 0
 

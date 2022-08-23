@@ -18,7 +18,7 @@ CheckpointFreq : 5
 
 NEpochs : 100
 
-BatchSize : 8
+BatchSize : 32
 
 Seed : 0
 
