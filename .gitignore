@@ -1,6 +1,7 @@
 .ipynb_checkpoints/
 __pycache__/
-*.png
+
+Models/output/*/*.pt
 *.pkl
 *.docx
 *.tiff
